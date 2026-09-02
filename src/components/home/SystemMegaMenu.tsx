@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 /** Mega menu "Sistema" — categories on the left, segments grid on the right. */
 export function SystemMegaMenu() {
   const [active, setActive] = useState(0);
-  const category = segmentCategories[active];
+  const category = segmentCategories[active] ?? segmentCategories[0]!;
 
   return (
     <div className="pointer-events-none absolute inset-x-0 top-full z-50 hidden pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 lg:block">
