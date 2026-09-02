@@ -217,7 +217,7 @@ export const cases: CustomerCase[] = [
     logo: logoDaorla.url,
     logoAlt: "Logo do DaOrla Café",
     quote:
-      "Do caixa às comandas, tudo conversa entre si. Atendemos mais clientes com a mesma equipe e sem correria, só com Dominus.",
+      "Do caixa às comandas, tudo conversa entre si. Atendemos mais clientes com a mesma equipe e sem correria, Dominus é o melhor.",
     videoId: "ea7aOYtaCuA",
   },
 ];
