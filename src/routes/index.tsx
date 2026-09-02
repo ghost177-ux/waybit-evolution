@@ -1,24 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { TopBar } from "@/components/home/TopBar";
+import { Header } from "@/components/home/Header";
+import { Hero } from "@/components/home/Hero";
+import { Segments } from "@/components/home/Segments";
+import { Metrics } from "@/components/home/Metrics";
+import { Dominus } from "@/components/home/Dominus";
+import { DominusBenefits } from "@/components/home/DominusBenefits";
+import { Cases } from "@/components/home/Cases";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Waybit | Gestão simplificada para o seu negócio" },
+      {
+        name: "description",
+        content:
+          "Sistema de gestão com PDV, estoque e financeiro para alimentação e varejo. Mais de 1.000 clientes, 9.6/10 de satisfação e 15 anos de experiência.",
+      },
+      { property: "og:title", content: "Waybit | Gestão simplificada para o seu negócio" },
+      {
+        property: "og:description",
+        content:
+          "A rotina da sua empresa leve e com menos esforço. Sistema de gestão para o seu ramo de atuação.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <TopBar />
+      <Header />
+      <main>
+        <Hero />
+        <Segments />
+        <Metrics />
+        <Dominus />
+        <DominusBenefits />
+        <Cases />
+      </main>
     </div>
   );
 }
