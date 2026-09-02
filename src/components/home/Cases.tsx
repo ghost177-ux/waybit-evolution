@@ -18,14 +18,14 @@ export function Cases() {
   return (
     <section className="bg-background py-16 lg:py-24" aria-label="Cases e depoimentos">
       <Container>
-        <SectionHeading
+        {/*<SectionHeading
           title={
             <>
               Quem usa, <span className="text-brand-blue">recomenda</span>
             </>
           }
           subtitle="Histórias reais de clientes que deixaram a rotina mais leve com o Waybit."
-        />
+        />*/}
 
         <div className="relative mt-12">
           <ul
