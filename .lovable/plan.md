@@ -37,8 +37,9 @@ Fora do escopo: Soluções completas, Integrações, Suporte, CTA final, Blog, N
 - Título centralizado "Gestão simplificada de estoque, vendas e finanças para o seu negócio." com subtítulo em cinza, largura de texto controlada.
 - Benefícios seguindo o padrão de cards da marca: funcionalidade → como ajuda → benefício → resultado.
 
-### Cases (img4, img5)
-- Grade/carrossel de 3 cases: aspas coloridas, depoimento em negrito, nome do cliente na cor do case (azul, amarelo, vermelho), e player vertical (9:16) com thumbnail do YouTube Shorts, cabeçalho do canal e botão play; setas de navegação laterais.
+### Cases (img4, img5, image.png) — com as alterações solicitadas
+- Ordem dentro de cada card: **logo circular + nome do cliente na cor do case (azul, amarelo, vermelho) no topo**, depois aspas coloridas + depoimento em negrito, e por fim o player vertical (9:16) com thumbnail do YouTube Shorts, cabeçalho do canal e botão play; setas de navegação laterais.
+- Logos oficiais enviadas (via CDN): DaOrla Café → `DaOrla_Café.jpg`; Grãos e Zero Açúcar → `Grãos_zero.jpg`; Zum Zum Autocenter → `Bittencas_Pizza.jpg` (conforme sua indicação, mesmo o arquivo trazendo a marca Bittenca's — trocável depois).
 - Vídeos: Grãos e Zero Açúcar `ugzBfW_pkOo`, Zum Zum Autocenter `5tfA3619NXs`, DaOrla Café `ea7aOYtaCuA` — facade com thumbnail e embed ao clicar.
 
 ## Assets
