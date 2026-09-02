@@ -23,7 +23,7 @@ export function Segments() {
           title={
             <>
               O sistema ideal para o seu{" "}
-              <span className="text-brand-blue">ramo de atuação</span>
+              <span className="text-brand-blue">Negócio</span>
             </>
           }
           subtitle="Encontre o seu segmento e veja como o Waybit simplifica a gestão do seu negócio."
