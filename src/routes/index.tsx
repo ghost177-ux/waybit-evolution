@@ -4,7 +4,7 @@ import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
 //import { Segments } from "@/components/home/Segments";
 import { Metrics } from "@/components/home/Metrics";
-import { Dominus } from "@/components/home/Dominus";
+//import { Dominus } from "@/components/home/Dominus";
 //import { DominusBenefits } from "@/components/home/DominusBenefits";
 import { Cases } from "@/components/home/Cases";
 
@@ -39,7 +39,7 @@ function Home() {
         <Hero />
         {/*<Segments />*/}
         <Metrics />
-        <Dominus />
+        {/*<Dominus />*/}
         {/*<DominusBenefits />*/}
         <Cases />
       </main>
