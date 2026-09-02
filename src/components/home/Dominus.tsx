@@ -15,14 +15,14 @@ export function Dominus() {
           Um sistema completo e fácil de usar, feito para quem quer crescer sem
           complicar a rotina.
         </p>
-        <a
+        {/*<a
           href={contact.whatsapp}
           target="_blank"
           rel="noreferrer"
           className="mt-8 inline-block rounded-full bg-brand-green px-8 py-3 font-display text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.03]"
         >
           Conhecer o Dominus
-        </a>
+        </a>*/}
       </Container>
     </section>
   );
