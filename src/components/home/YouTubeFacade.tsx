@@ -13,14 +13,14 @@ export function YouTubeFacade({ videoId, title, channelName, channelLogo }: Prop
   const [playing, setPlaying] = useState(false);
   const [thumbFailed, setThumbFailed] = useState(false);
   const [thumb, setThumb] = useState(
-    `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+    `https://i.ytimg.com/vi/${videoId}/oar2.jpg`,
   );
 
   const onThumbError = () => {
-    if (thumb.includes("maxresdefault")) {
+    if (thumb.includes("oar2")) {
+      setThumb(`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`);
+    } else if (thumb.includes("maxresdefault")) {
       setThumb(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
-    } else if (thumb.includes("hqdefault")) {
-      setThumb(`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
     } else {
       setThumbFailed(true);
     }
