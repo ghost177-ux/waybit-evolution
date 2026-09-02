@@ -11,9 +11,20 @@ interface Props {
 /** 9:16 vertical video facade: loads the YouTube iframe only after click. */
 export function YouTubeFacade({ videoId, title, channelName, channelLogo }: Props) {
   const [playing, setPlaying] = useState(false);
+  const [thumbFailed, setThumbFailed] = useState(false);
   const [thumb, setThumb] = useState(
     `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
   );
+
+  const onThumbError = () => {
+    if (thumb.includes("maxresdefault")) {
+      setThumb(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
+    } else if (thumb.includes("hqdefault")) {
+      setThumb(`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
+    } else {
+      setThumbFailed(true);
+    }
+  };
 
   if (playing) {
     return (
