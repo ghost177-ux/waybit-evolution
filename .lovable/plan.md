@@ -1,54 +1,65 @@
 # Website Waybit — Etapa 01 (Header → Cases)
 
-Construção da primeira parte da nova Home da Waybit, preservando a identidade visual do site atual (waybit.com.br) como fonte de verdade.
+Construção da primeira parte da nova Home da Waybit com fidelidade às telas de referência enviadas (img1–img5) e à logo oficial `logo_waybit.png`.
 
 ## Escopo desta etapa
 
-1. Header (logo, navegação, CTA)
-2. Hero — "A rotina da sua empresa leve e com menos esforço." + barra de pesquisa "Qual seu ramo de atuação?"
-3. Segmentos — cards clicáveis (Varejo, Center/Mecânica, Food/Restaurante, Xpert/Posto, Certbit)
-4. Métricas — +30% economia de tempo, +1.000 clientes, 9,6/10 satisfação, +15 anos
-5. Dominus — "Gestão simplificada de estoque, vendas e finanças para o seu negócio."
-6. Benefícios do Dominus — funcionalidade → como ajuda → benefício → resultado
-7. Cases/Depoimentos — 3 depoimentos com vídeos do YouTube
+1. Header (topbar + navegação + CTA)
+2. Hero — "A rotina da sua empresa leve e com menos esforço." + busca "Qual seu ramo de atuação?"
+3. Segmentos (mega menu Sistema + direcionamento por ramo)
+4. Métricas
+5. Dominus
+6. Benefícios do Dominus
+7. Cases/Depoimentos com vídeos
 
 Fora do escopo: Soluções completas, Integrações, Suporte, CTA final, Blog, Newsletter, Footer, páginas internas.
 
-## Identidade visual (derivada do site atual)
+## Fidelidade visual (extraída das referências)
 
-- Cores observadas: vermelho/coral `#FC4242` (destaque e CTA), amarelo `#FCC42C`, azul `#3BBCEC`, cinza `#5A5A5A`, branco. Serão registradas como tokens semânticos no design system, sem paleta nova.
-- Tipografia: exclusivamente **Rubik** (títulos/números) e **Poppins** (texto corrido), carregadas via `<link>` no root.
-- Cards com raio suave, sombra leve, fundo claro; botão principal sólido em destaque, secundários como links/outline.
-- Container com largura controlada e respiro lateral; ritmo vertical consistente entre seções.
+- **Paleta rotativa da marca**: azul `#3BBCEC`, amarelo `#FCC42C`, verde (CTA `#7DC855`), cinza escuro `#3A3A3A`, vermelho/coral `#FC4242`, texto cinza `#5A5A5A`. A barra de 4 cores (azul/amarelo/verde/escuro) aparece na topbar e nas bordas do card de métricas.
+- **Tema rotativo do Hero**: o Hero alterna entre azul e amarelo (img1 vs img2), incluindo destaque das palavras "rotina/leve/esforço", botão Pesquisar e formas geométricas.
+- **Tipografia**: Poppins nos títulos/nav (peso bold, itálico nas palavras destacadas do Hero) e Rubik no apoio — apenas essas duas famílias.
+- **Logo oficial** `logo_waybit.png` usada fielmente no header (asset via CDN) e como favicon.
 
-## Conteúdo e assets
+### Header (img1–img3)
+- Topbar clara: telefone (21) 97581-2676 com ícone de headset, e-mail comercial@waybit.com.br, à direita FAQ, Central de Ajuda, Suporte, ícones Facebook e Instagram; abaixo a faixa de 4 cores.
+- Barra principal branca: logo à esquerda; nav central Sistema (dropdown), Integrações, Seja um Parceiro, Planos, Blogs; CTA verde "Falar com Especialista" à direita.
+- Mega menu "Sistema": coluna de categorias (Alimentação, Varejo em geral) + colunas de itens com ícones (Boteco, Cafeteria, Choperia, Churrascaria, Delivery, Hamburgueria, Lanchonete, Petiscaria, Pizzaria, Quiosque, Restaurante, Sushibar / Bicicletaria, Hortifruti, Loja de Calçados, Celular, Doces, Informática, Roupas, Tintas, Variedades, Material de Construção, Material Elétrico, Minimercado, Padaria, Papelaria, Peixaria, Perfumaria, Sorveteria), com hover sublinhado colorido.
 
-- Imagens e logos são referenciadas a partir do site atual (banners `bannerN-1/2/3.png`, capas de vídeo, imagem do sistema), conforme sua escolha; substituíveis quando os assets oficiais forem enviados.
-- Vídeos dos cases via YouTube (thumbnail + play, embed sob demanda):
-  - Grãos e Zero Açúcar — `ugzBfW_pkOo`
-  - Zum Zum Autocenter — `5tfA3619NXs`
-  - DaOrla Café — `ea7aOYtaCuA`
-- Métricas e nomes de clientes ficam em um arquivo de conteúdo único para validação antes da publicação.
+### Hero (img3)
+- Duas colunas: título grande à esquerda com palavras destacadas em cor, label "Qual seu ramo de atuação?" e campo "Digite Aqui..." com botão colorido "Pesquisar" (ícone de lupa).
+- À direita, composição em losango/diamante com foto e triângulos da cor do tema.
 
-## Comportamento
+### Métricas (img4)
+- Card branco único com faixas coloridas em cima e embaixo (azul, amarelo, verde, escuro), 4 colunas com ícone de linha (cronômetro, pessoas, estrela, bolo) e número em destaque: +De **30**% economia de tempo, +De **1.000** clientes, +De **9.6**/10 satisfação, +De **15** anos.
 
-- Barra de pesquisa no Hero: filtra/sugere segmentos e rola até a seção de Segmentos (ou navega ao card correspondente). Sem backend.
-- Header responsivo com menu mobile (Sistema, Segmentos, Integrações, Parceiros, Planos, Blog, FAQ, Central de Ajuda, Suporte) e CTA "Falar com especialista" (WhatsApp).
-- Responsivo em desktop, notebook, tablet e mobile.
+### Dominus + Benefícios (img4)
+- Título centralizado "Gestão simplificada de estoque, vendas e finanças para o seu negócio." com subtítulo em cinza, largura de texto controlada.
+- Benefícios seguindo o padrão de cards da marca: funcionalidade → como ajuda → benefício → resultado.
+
+### Cases (img4, img5)
+- Grade/carrossel de 3 cases: aspas coloridas, depoimento em negrito, nome do cliente na cor do case (azul, amarelo, vermelho), e player vertical (9:16) com thumbnail do YouTube Shorts, cabeçalho do canal e botão play; setas de navegação laterais.
+- Vídeos: Grãos e Zero Açúcar `ugzBfW_pkOo`, Zum Zum Autocenter `5tfA3619NXs`, DaOrla Café `ea7aOYtaCuA` — facade com thumbnail e embed ao clicar.
+
+## Assets
+
+- Logo oficial enviada → CDN asset + favicon.
+- Imagens de conteúdo (foto do Hero, ícones das métricas) reaproveitadas do site atual até que os arquivos oficiais sejam enviados; screenshots de referência não são embutidos.
 
 ## Detalhes técnicos
 
-- Página em `src/routes/index.tsx` (substitui o placeholder), com `head()` próprio (title, description, og/twitter).
-- Componentes por seção em `src/components/home/`: `Header`, `Hero`, `SegmentSearch`, `Segments`, `Metrics`, `Dominus`, `DominusBenefits`, `Cases`; primitivos compartilhados (`Container`, `SectionHeading`, `Button`, `Card`, `YouTubeEmbed`) em `src/components/ui`/`src/components/common` para reuso nas próximas etapas.
-- Conteúdo estático tipado em `src/content/home.ts` (segmentos, métricas, benefícios, cases) para facilitar validação e expansão.
-- Tokens de cor/tipografia em `src/styles.css` (`@theme` + `:root`), sem cores hardcoded nos componentes.
-- Vídeos com facade (thumbnail + clique carrega o iframe) para performance.
+- Home em `src/routes/index.tsx` (substitui o placeholder), com `head()` próprio (title, description, og/twitter).
+- Componentes em `src/components/home/`: `TopBar`, `Header` (+ `SystemMegaMenu`, menu mobile), `Hero`, `SegmentSearch`, `Segments`, `Metrics`, `Dominus`, `DominusBenefits`, `Cases`; primitivos compartilhados (`Container`, `SectionHeading`, `Button`, `Card`, `YouTubeFacade`).
+- Conteúdo tipado em `src/content/home.ts` (segmentos do mega menu, métricas, benefícios, cases) para validação e expansão nas próximas etapas.
+- Tokens de cor, gradientes e fontes em `src/styles.css` (`@theme` + `:root`); nenhuma cor hardcoded nos componentes. Rubik e Poppins via `<link>` no `__root.tsx`.
+- Responsivo: desktop, notebook, tablet e mobile (mega menu vira acordeão, cases viram carrossel deslizante).
 
 ## Sequência
 
-1. Design system: tokens de cor, fontes Rubik/Poppins, container e primitivos.
-2. Header + Hero (com busca de segmento).
-3. Segmentos + Métricas.
-4. Dominus + Benefícios.
-5. Cases com vídeos.
-6. Revisão de responsividade e SEO da Home.
+1. Design system (cores, fontes, container, primitivos) + logo/favicon.
+2. TopBar + Header com mega menu.
+3. Hero com busca de segmento.
+4. Segmentos + Métricas.
+5. Dominus + Benefícios.
+6. Cases com vídeos.
+7. Revisão de responsividade e SEO.
