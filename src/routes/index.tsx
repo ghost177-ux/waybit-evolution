@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { TopBar } from "@/components/home/TopBar";
 import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
-import { Segments } from "@/components/home/Segments";
+//import { Segments } from "@/components/home/Segments";
 import { Metrics } from "@/components/home/Metrics";
 import { Dominus } from "@/components/home/Dominus";
 import { DominusBenefits } from "@/components/home/DominusBenefits";
@@ -37,7 +37,7 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <Segments />
+        {/*<Segments />*/}
         <Metrics />
         <Dominus />
         <DominusBenefits />
