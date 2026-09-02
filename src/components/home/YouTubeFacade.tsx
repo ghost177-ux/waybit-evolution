@@ -47,15 +47,23 @@ export function YouTubeFacade({ videoId, title, channelName, channelLogo }: Prop
       className="group relative block aspect-[9/16] w-full overflow-hidden rounded-xl bg-brand-dark text-left"
       aria-label={`Assistir depoimento: ${title}`}
     >
-      <img
-        src={thumb}
-        alt=""
-        loading="lazy"
-        onError={() =>
-          setThumb(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`)
-        }
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      />
+      {thumbFailed ? (
+        <span className="absolute inset-0 flex items-center justify-center p-8">
+          <img
+            src={channelLogo}
+            alt=""
+            className="h-20 w-20 rounded-full border-2 border-white/30 object-cover opacity-80"
+          />
+        </span>
+      ) : (
+        <img
+          src={thumb}
+          alt=""
+          loading="lazy"
+          onError={onThumbError}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      )}
       {/* channel header, like the Shorts preview */}
       <div className="absolute inset-x-0 top-0 flex items-center gap-2 bg-gradient-to-b from-black/60 to-transparent p-3">
         <img
