@@ -17,7 +17,7 @@ Fora do escopo: Soluções completas, Integrações, Suporte, CTA final, Blog, N
 ## Fidelidade visual (extraída das referências)
 
 - **Paleta rotativa da marca**: azul `#3BBCEC`, amarelo `#FCC42C`, verde (CTA `#7DC855`), cinza escuro `#3A3A3A`, vermelho/coral `#FC4242`, texto cinza `#5A5A5A`. A barra de 4 cores (azul/amarelo/verde/escuro) aparece na topbar e nas bordas do card de métricas.
-- **Tema rotativo do Hero**: o Hero alterna entre azul e amarelo (img1 vs img2), incluindo destaque das palavras "rotina/leve/esforço", botão Pesquisar e formas geométricas.
+- **Tema rotativo do Hero**: o Hero roda um carrossel automático de banners alternando **vermelho `#FC4242` → azul `#3BBCEC` → amarelo `#FCC42C` → vermelho** (e assim por diante). A cada troca, mudam juntos: as palavras destacadas do título ("rotina", "leve", "esforço."), o botão "Pesquisar" e as formas geométricas/foto do losango (banners do site atual `bannerN-1/2/3.png`, conforme referências azul.png, amarelo.png e verm.png). Transição suave de fade entre os temas.
 - **Tipografia**: Poppins nos títulos/nav (peso bold, itálico nas palavras destacadas do Hero) e Rubik no apoio — apenas essas duas famílias.
 - **Logo oficial** `logo_waybit.png` usada fielmente no header (asset via CDN) e como favicon.
 
