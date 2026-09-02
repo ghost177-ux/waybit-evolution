@@ -20,11 +20,10 @@ export function Hero() {
 
   return (
     <section className="overflow-hidden bg-background" aria-label="Apresentação">
-      {/* Mudamos para grid de ponta a ponta na tela (lg:grid-cols-2) */}
-      <div className="grid items-center lg:grid-cols-2">
+      <Container className="grid items-center gap-10 py-12 lg:grid-cols-2 lg:gap-0 lg:py-0">
         
-        {/* Lado esquerdo: Textos e busca (fica dentro do container para alinhar com o resto do site) */}
-        <Container className="py-12 lg:py-16">
+        {/* Lado esquerdo: Títulos e busca (mantém o espaçamento normal) */}
+        <div className="py-6 lg:py-16 lg:pr-8">
           <h1 className="font-display text-4xl font-bold leading-tight text-brand-dark sm:text-5xl lg:text-[3.4rem] lg:leading-[1.15]">
             A{" "}
             <em
@@ -49,14 +48,14 @@ export function Hero() {
             </em>
           </h1>
           <SegmentSearch themeIndex={index} />
-        </Container>
+        </div>
 
-        {/* Lado direito: Faixa colorida que estica até a borda da tela + Imagem */}
+        {/* Lado direito: A faixa colorida que vai até a borda da tela e troca de cor junto */}
         <div 
-          className="relative flex h-full w-full items-center justify-center py-12 transition-colors duration-700 lg:py-16"
+          className="relative flex h-full w-screen items-center justify-center py-12 transition-colors duration-700 lg:py-24"
           style={{ backgroundColor: theme.color }}
         >
-          <div className="relative mx-auto w-full max-w-md px-4 lg:max-w-none lg:px-0">
+          <div className="relative mx-auto w-full max-w-md px-4 lg:max-w-none lg:px-12">
             {heroThemes.map((t, i) => (
               <img
                 key={t.id}
@@ -88,7 +87,7 @@ export function Hero() {
           </div>
         </div>
 
-      </div>
+      </Container>
     </section>
   );
 }
