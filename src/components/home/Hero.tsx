@@ -53,7 +53,7 @@ export function Hero() {
             className="absolute inset-y-0 left-1/2 -right-[50vw] z-0 hidden transition-colors duration-700 lg:block"
             style={{
               backgroundColor: theme.color,
-              clipPath: "polygon(6% 0, 100% 0, 100% 100%, 6% 100%)"
+              clipPath: "polygon(18% 0, 100% 0, 100% 100%, 18% 100%, 0 50%)"
             }}
           />
 
