@@ -21,10 +21,49 @@ export function Hero() {
 
   return (
     <section
-      className="overflow-hidden bg-background"
+      className="relative overflow-hidden bg-background"
       aria-label="Apresentação"
     >
-      <Container className="grid items-center gap-10 py-12 lg:grid-cols-2 lg:gap-6 lg:py-16">
+      {/* =====================================================
+          FUNDO CARROSSEL
+          O fundo ocupa a tela inteira e desliza da direita
+          para a esquerda na troca dos slides.
+      ====================================================== */}
+      <div className="absolute inset-0 z-0 hidden overflow-hidden lg:block">
+        <div
+          className="flex h-full transition-transform duration-700 ease-in-out"
+          style={{
+            width: `${heroThemes.length * 100}vw`,
+            transform: `translateX(-${index * 100}vw)`,
+          }}
+        >
+          {heroThemes.map((t) => (
+            <div
+              key={t.id}
+              className="relative h-full shrink-0"
+              style={{
+                width: "100vw",
+                backgroundColor: t.color,
+              }}
+            >
+              {/* Recorte geométrico do fundo */}
+              <div
+                className="absolute inset-y-0 left-1/2 w-[55vw]"
+                style={{
+                  backgroundColor: t.color,
+                  clipPath:
+                    "polygon(18% 0, 100% 0, 100% 100%, 18% 100%, 0 50%)",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* =====================================================
+          CONTEÚDO
+      ====================================================== */}
+      <Container className="relative z-10 grid items-center gap-10 py-12 lg:grid-cols-2 lg:gap-6 lg:py-16">
         <div>
           <h1 className="font-display text-4xl font-bold leading-tight text-brand-dark sm:text-5xl lg:text-[3.4rem] lg:leading-[1.15]">
             A{" "}
@@ -53,40 +92,12 @@ export function Hero() {
           <SegmentSearch themeIndex={index} />
         </div>
 
+        {/* =====================================================
+            IMAGENS / LOSANGO
+            Mantido separado do fundo para não ser afetado
+            pela animação do fundo.
+        ====================================================== */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-
-          {/* FUNDO DO CARROSSEL */}
-          <div
-            className="absolute inset-y-0 left-1/2 -right-[50vw] z-0 hidden overflow-hidden lg:block"
-            style={{
-              clipPath:
-                "polygon(18% 0, 100% 0, 100% 100%, 18% 100%, 0 50%)",
-            }}
-          >
-            <div
-              className="flex h-full transition-transform duration-700 ease-in-out"
-              style={{
-                width: `${heroThemes.length * 100}%`,
-                transform: `translateX(-${
-                  index * (100 / heroThemes.length)
-                }%)`,
-              }}
-            >
-              {heroThemes.map((t) => (
-                <div
-                  key={t.id}
-                  className="h-full"
-                  style={{
-                    width: `${100 / heroThemes.length}%`,
-                    flexShrink: 0,
-                    backgroundColor: t.color,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* IMAGENS DO CARROSSEL */}
           {heroThemes.map((t, i) => (
             <img
               key={t.id}
@@ -95,7 +106,7 @@ export function Hero() {
               width={640}
               height={569}
               loading={i === 0 ? "eager" : "lazy"}
-              className="relative z-10 w-full transition-opacity duration-700"
+              className="relative z-20 w-full transition-opacity duration-700"
               style={{
                 opacity: i === index ? 1 : 0,
                 position: i === 0 ? "relative" : "absolute",
@@ -105,9 +116,11 @@ export function Hero() {
             />
           ))}
 
-          {/* INDICADORES */}
+          {/* =================================================
+              INDICADORES
+          ================================================== */}
           <div
-            className="absolute -bottom-6 left-1/2 flex -translate-x-1/2 gap-2"
+            className="absolute -bottom-6 left-1/2 z-30 flex -translate-x-1/2 gap-2"
             aria-hidden
           >
             {heroThemes.map((t, i) => (
