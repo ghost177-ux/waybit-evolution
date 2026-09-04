@@ -33,7 +33,6 @@ export function Solutions() {
                     colors.border,
                   )}
                 >
-                  {/* Ícone maior e posicionado em cima do título, centralizado */}
                   <div className="flex flex-col items-center gap-4">
                     <span
                       className={cn(
@@ -47,7 +46,8 @@ export function Solutions() {
                       {s.name}
                     </h3>
                   </div>
-                  <p className="mt-auto pt-6 text-sm text-brand-text">{s.description}</p>
+                  {/* Mudança aqui: mt-4 deixa o subtítulo a ~16px do título */}
+                  <p className="mt-4 text-sm text-brand-text">{s.description}</p>
                 </a>
               </li>
             );
