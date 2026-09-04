@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Package, FileText, BarChart3, Bike, ShoppingCart, Layers } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/site";
-import dominusLogoAsset from "@/assets/dominus-logo.png.asset.json";
+import logoDominus from "@/assets/Logo-dominus.png";
 
 interface Node {
   label: string;
@@ -27,7 +27,7 @@ function position(angleDeg: number, radiusPct: number) {
   };
 }
 
-export function Dominus() {
+export function MetricasDominus() {
   return (
     <section id="parceiro" className="overflow-hidden bg-white px-4 py-16 lg:py-20">
       <div className="mx-auto max-w-7xl">
@@ -64,7 +64,7 @@ export function Dominus() {
             {/* Centro */}
             <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-4 shadow-[0_15px_45px_-10px_rgba(47,180,233,0.4)] ring-4 ring-waybit-cyan/15 sm:h-36 sm:w-36 sm:p-5">
               <img
-                src={dominusLogoAsset.url}
+                src={logoDominus}
                 alt="Dominus — ERP Waybit"
                 className="w-full object-contain"
               />
