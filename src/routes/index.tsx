@@ -7,6 +7,9 @@ import { Metrics } from "@/components/home/Metrics";
 //import { Dominus } from "@/components/home/Dominus";
 //import { DominusBenefits } from "@/components/home/DominusBenefits";
 import { Cases } from "@/components/home/Cases";
+import { Support } from "@/components/home/Support";
+import { Solutions } from "@/components/home/Solutions";
+import { Footer } from "@/components/home/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,7 +45,10 @@ function Home() {
         {/*<Dominus />*/}
         {/*<DominusBenefits />*/}
         <Cases />
+        <Support />
+        <Solutions />
       </main>
+      <Footer />
     </div>
   );
 }
