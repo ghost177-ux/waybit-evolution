@@ -4,7 +4,7 @@ import suporteImg from "@/assets/suporte.png";
 
 export function Support() {
   return (
-    <section id="suporte" className="bg-background py-16 lg:py-20" aria-label="Suporte">
+    <section id="suporte" className="bg-background py-8 lg:py-16" aria-label="Suporte">
       <Container>
         {/* items-center alinha o texto perfeitamente com o centro da imagem */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
