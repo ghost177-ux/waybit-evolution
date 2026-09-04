@@ -318,6 +318,11 @@ export const footer = {
   institutional: [
     { label: "Política de Privacidade", href: "https://waybit.com.br/politica-de-privacidade/" },
   ],
-  topSegments: [{ label: "Auto Peças", href: "https://waybit.com.br/auto-pecas/" }],
+  topSegments: [
+    { label: "Restaurante", href: "https://waybit.com.br/sistema-para-restaurante/" },
+    { label: "Hamburgueria", href: "https://waybit.com.br/sistema-para-hamburgueria/" },
+    { label: "Loja de Material de Construção", href: "https://waybit.com.br/sistema-para-material-de-construcao/" },
+    { label: "Loja de Tintas", href: "https://waybit.com.br/sistema-para-loja-de-tintas/" },
+  ],
   copyright: "© Waybit Software. Todos os direitos reservados.",
 };
