@@ -27,7 +27,7 @@ export function Support() {
               src={support.image}
               alt={support.imageAlt}
               loading="lazy"
-              className="w-full max-w-md rounded-2xl object-cover shadow-lg"
+              className="w-full max-w-md object-cover"
             />
           </div>
         </div>
