@@ -11,7 +11,7 @@ export function Footer() {
           <img
             src={logoWhite}
             alt="Waybit"
-            className="mb-4 h-16 w-auto object-contain"
+            className="mb-4 h-14 w-auto object-contain"
           />
           <p className="max-w-xs font-display text-lg font-semibold leading-snug">
             {footer.slogan}
