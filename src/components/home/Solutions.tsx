@@ -14,7 +14,7 @@ export function Solutions() {
   return (
     <section id="solucoes" className="bg-brand-soft py-16 lg:py-20" aria-label="Soluções por segmento">
       <Container>
-        <SectionHeading
+        <SectionHeading className="mx-auto max-w-4xl text-center"
           title="Conheça um sistema de gestão empresarial completo com o melhor suporte do mercado!"
           subtitle="Clique na solução para seu segmento e conheça mais:"
         />
