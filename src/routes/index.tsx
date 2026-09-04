@@ -45,7 +45,10 @@ function Home() {
         {/*<Dominus />*/}
         {/*<DominusBenefits />*/}
         <Cases />
+        <Support />
+        <Solutions />
       </main>
+      <Footer />
     </div>
   );
 }
