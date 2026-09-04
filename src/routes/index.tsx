@@ -4,13 +4,13 @@ import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
 //import { Segments } from "@/components/home/Segments";
 import { Metrics } from "@/components/home/Metrics";
-//import { Dominus } from "@/components/home/Dominus";
+import { Dominus } from "@/components/home/Dominus";
 //import { DominusBenefits } from "@/components/home/DominusBenefits";
 import { Cases } from "@/components/home/Cases";
 import { Support } from "@/components/home/Support";
 import { Solutions } from "@/components/home/Solutions";
 import { Footer } from "@/components/home/Footer";
-import { MetricasDominus } from "@/components/home/MetricasDominus";
+//import { MetricasDominus } from "@/components/home/MetricasDominus";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,12 +43,12 @@ function Home() {
         <Hero />
         {/*<Segments />*/}
         <Metrics />
-        {/*<Dominus />*/}
+        <Dominus />
         {/*<DominusBenefits />*/}
         <Cases />
         <Support />
         <Solutions />
-        <MetricasDominus/>
+        {/*<MetricasDominus/>*/}
       </main>
       <Footer />
     </div>
