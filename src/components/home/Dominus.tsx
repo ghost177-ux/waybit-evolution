@@ -2,39 +2,28 @@ import type { LucideIcon } from "lucide-react";
 import { Package, FileText, BarChart3, Bike, ShoppingCart, Layers } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/site";
 
-
-interface Node {
+interface NodeItem {
   label: string;
   icon: LucideIcon;
   color: string;
-  angle: number; // graus, 0 = topo
+  positionClass: string;
 }
 
-const NODES: Node[] = [
-  { label: "Estoque", icon: Package, color: "bg-brand-blue", angle: 0 },
-  { label: "Notas Fiscais", icon: FileText, color: "bg-brand-yellow", angle: 60 },
-  { label: "Relatórios", icon: BarChart3, color: "bg-brand-green", angle: 120 },
-  { label: "Delivery", icon: Bike, color: "bg-brand-red", angle: 180 },
-  { label: "PDV", icon: ShoppingCart, color: "bg-brand-yellow", angle: 240 },
-  { label: "Integrações", icon: Layers, color: "bg-brand-dark", angle: 300 },
+const NODES: NodeItem[] = [
+  { label: "Estoque", icon: Package, color: "bg-brand-blue", positionClass: "left-1/2 top-[6%] -translate-x-1/2 -translate-y-1/2" },
+  { label: "Notas Fiscais", icon: FileText, color: "bg-brand-yellow", positionClass: "left-[82%] top-[27%] -translate-x-1/2 -translate-y-1/2" },
+  { label: "Relatórios", icon: BarChart3, color: "bg-brand-green", positionClass: "left-[82%] top-[73%] -translate-x-1/2 -translate-y-1/2" },
+  { label: "Delivery", icon: Bike, color: "bg-brand-red", positionClass: "left-1/2 top-[94%] -translate-x-1/2 -translate-y-1/2" },
+  { label: "PDV", icon: ShoppingCart, color: "bg-brand-yellow", positionClass: "left-[18%] top-[73%] -translate-x-1/2 -translate-y-1/2" },
+  { label: "Integrações", icon: Layers, color: "bg-brand-dark", positionClass: "left-[18%] top-[27%] -translate-x-1/2 -translate-y-1/2" },
 ];
 
-function position(angleDeg: number, radiusPct: number) {
-  const rad = ((angleDeg - 90) * Math.PI) / 180;
-  return {
-    left: `${50 + radiusPct * Math.cos(rad + Math.PI / 2)}%`,
-    top: `${50 + radiusPct * Math.sin(rad + Math.PI / 2)}%`,
-  };
-}
-
-export function MetricasDominus() {
+export function Dominus() {
   return (
     <section id="parceiro" className="overflow-hidden bg-white px-4 py-16 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        {/* Grid de 2 colunas: Texto à esquerda, Diagrama à direita */}
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           
-          {/* Coluna da Esquerda: Título, Subtítulo e CTA alinhados à esquerda */}
           <div className="text-left">
             <h2 className="font-display text-3xl font-bold text-brand-dark sm:text-4xl lg:text-4xl">
               Seu negócio mais <span className="italic text-brand-blue">rápido</span>, seu dia mais{" "}
@@ -57,11 +46,9 @@ export function MetricasDominus() {
             </div>
           </div>
 
-          {/* Coluna da Direita: Diagrama Circular */}
           <div className="relative mx-auto aspect-square w-full max-w-[480px]">
             <div className="absolute inset-[12%] rounded-full border-2 border-dashed border-brand-blue/30" />
             
-            {/* Centro */}
             <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-4 shadow-[0_15px_45px_-10px_rgba(47,180,233,0.4)] ring-4 ring-brand-blue/15 sm:h-36 sm:w-36 sm:p-5">
               <img
                 src="/Logo-dominus.png"
@@ -70,15 +57,12 @@ export function MetricasDominus() {
               />
             </div>
 
-            {/* Nós */}
             {NODES.map((n) => {
               const Icon = n.icon;
-              const pos = position(n.angle, 38);
               return (
                 <div
                   key={n.label}
-                  className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
-                  style={pos}
+                  className={`absolute flex flex-col items-center gap-1.5 ${n.positionClass}`}
                 >
                   <span
                     className={`flex h-12 w-12 items-center justify-center rounded-full ${n.color} shadow-md transition-transform hover:scale-110 sm:h-14 sm:w-14`}
@@ -98,7 +82,6 @@ export function MetricasDominus() {
     </section>
   );
 }
-
 
 {/*import { contact } from "@/content/home";
 import { Container } from "./shared";
