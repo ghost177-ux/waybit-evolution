@@ -42,12 +42,12 @@ export function Solutions() {
                     >
                       <img src={s.logo} alt={s.logoAlt} loading="lazy" className="h-10 w-10 object-contain" />
                     </span>
-                    <h3 className="font-display text-lg font-semibold text-brand-dark">
+                    <h3 className="font-display text-xl font-semibold text-brand-dark">
                       {s.name}
                     </h3>
                   </div>
                   {/* Mudança aqui: mt-4 deixa o subtítulo a ~16px do título */}
-                  <p className="mt-4 text-sm text-brand-text">{s.description}</p>
+                  <p className="mt-4 text-base text-brand-text">{s.description}</p>
                 </a>
               </li>
             );
