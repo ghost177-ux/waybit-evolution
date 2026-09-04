@@ -4,6 +4,12 @@ import bannerYellow from "../assets/banner-yellow.png.asset.json";
 import logoDaorla from "../assets/logo-daorla.jpg.asset.json";
 import logoGraos from "../assets/logo-graos.jpg.asset.json";
 import logoZumzum from "../assets/logo-zumzum.jpg.asset.json";
+import suportePessoa from "../assets/suporte-pessoa.png.asset.json";
+import logoDominusVarejo from "../assets/logo-dominus-varejo.png.asset.json";
+import logoDominusCenter from "../assets/logo-dominus-center.png.asset.json";
+import logoDominusFood from "../assets/logo-dominus-food.png.asset.json";
+import logoXpert from "../assets/logo-xpert.png.asset.json";
+import logoCertbit from "../assets/logo-certbit.png.asset.json";
 
 export type HeroThemeId = "red" | "blue" | "yellow";
 
@@ -240,3 +246,78 @@ export const navLinks = [
   { label: "Planos", href: "https://waybit.com.br/planos/" },
   { label: "Blogs", href: "https://waybit.com.br/blog/" },
 ];
+
+export const support = {
+  title: "O suporte mais eficiente do Brasil!",
+  subtitle:
+    "Oferecemos suporte técnico 24h, com o primeiro atendimento em menos de 2 minutos",
+  cta: "falar com um especialista",
+  image: suportePessoa.url,
+  imageAlt: "Especialista de suporte Waybit sorrindo enquanto atende no notebook",
+};
+
+export type SolutionColor = "blue" | "yellow" | "red" | "dark" | "green";
+
+export interface Solution {
+  name: string;
+  description: string;
+  href: string;
+  logo: string;
+  logoAlt: string;
+  color: SolutionColor;
+}
+
+export const solutions: Solution[] = [
+  {
+    name: "Dominus Varejo",
+    description: "Sistema de gestão para varejo",
+    href: "https://waybit.com.br/dominus-varejo/",
+    logo: logoDominusVarejo.url,
+    logoAlt: "Logo Dominus Varejo",
+    color: "blue",
+  },
+  {
+    name: "Dominus Center",
+    description: "Sistema de gestão para mecânica",
+    href: "https://waybit.com.br/dominus-center/",
+    logo: logoDominusCenter.url,
+    logoAlt: "Logo Dominus Center",
+    color: "yellow",
+  },
+  {
+    name: "Dominus Food",
+    description: "Sistema de gestão para Restaurante",
+    href: "https://waybit.com.br/dominus-food/",
+    logo: logoDominusFood.url,
+    logoAlt: "Logo Dominus Food",
+    color: "red",
+  },
+  {
+    name: "Xpert",
+    description: "Sistema de gestão para posto",
+    href: "https://xpert.com.br/",
+    logo: logoXpert.url,
+    logoAlt: "Logo Xpert",
+    color: "dark",
+  },
+  {
+    name: "Certbit",
+    description: "Adquira já o seu certificado digital",
+    href: "https://certbit.com.br/",
+    logo: logoCertbit.url,
+    logoAlt: "Logo Certbit",
+    color: "green",
+  },
+];
+
+export const footer = {
+  slogan: "O Sistema de Gestão que traz felicidade!",
+  phone: "(22) 3412-2941",
+  phoneHref: "tel:+552234122941",
+  email: "comercial@waybit.com.br",
+  institutional: [
+    { label: "Política de Privacidade", href: "https://waybit.com.br/politica-de-privacidade/" },
+  ],
+  topSegments: [{ label: "Auto Peças", href: "https://waybit.com.br/auto-pecas/" }],
+  copyright: "© Waybit Software. Todos os direitos reservados.",
+};
