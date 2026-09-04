@@ -34,7 +34,7 @@ export function Footer() {
           </div>
         </div>
 
-        <nav aria-label="Institucional" className="lg:mt-8">
+        <nav aria-label="Institucional" className="lg:mt-10">
           <h3 className="font-display text-base font-semibold">Institucional</h3>
           <ul className="mt-3 space-y-2 text-sm text-white/90">
             {footer.institutional.map((link) => (
@@ -47,7 +47,7 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Top Segmentos" className="lg:mt-8">
+        <nav aria-label="Top Segmentos" className="lg:mt-10">
           <h3 className="font-display text-base font-semibold">Top Segmentos</h3>
           <ul className="mt-3 space-y-2 text-sm text-white/90">
             {footer.topSegments.map((link) => (
@@ -60,7 +60,7 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Redes sociais" className="lg:mt-8">
+        <nav aria-label="Redes sociais" className="lg:mt-10">
           <h3 className="font-display text-base font-semibold">Social</h3>
           <div className="mt-3 flex items-center gap-3">
             <a
