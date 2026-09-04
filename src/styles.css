@@ -55,6 +55,7 @@
   --color-brand-text: var(--brand-text);
   --color-brand-soft: var(--brand-soft);
 
+
   --font-sans: var(--font-rubik);
   --font-display: var(--font-poppins);
 }
@@ -144,8 +145,8 @@
       var(--brand-yellow) 50%,
       var(--brand-green) 50%,
       var(--brand-green) 75%,
-      var(--brand-dark) 75%,
-      var(--brand-dark) 100%
+      var(--brand-red) 75%,
+      var(--brand-red) 100%
     );
   }
 
