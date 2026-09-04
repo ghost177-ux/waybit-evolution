@@ -10,12 +10,12 @@ interface Node {
 }
 
 const NODES: Node[] = [
-  { label: "Estoque", icon: Package, color: "bg-waybit-cyan", angle: 0 },
-  { label: "Notas Fiscais", icon: FileText, color: "bg-waybit-yellow", angle: 60 },
-  { label: "Relatórios", icon: BarChart3, color: "bg-waybit-green", angle: 120 },
-  { label: "Delivery", icon: Bike, color: "bg-waybit-red", angle: 180 },
-  { label: "PDV", icon: ShoppingCart, color: "bg-waybit-orange", angle: 240 },
-  { label: "Integrações", icon: Layers, color: "bg-waybit-navy", angle: 300 },
+  { label: "Estoque", icon: Package, color: "bg-brand-blue", angle: 0 },
+  { label: "Notas Fiscais", icon: FileText, color: "bg-brand-yellow", angle: 60 },
+  { label: "Relatórios", icon: BarChart3, color: "bg-brand-green", angle: 120 },
+  { label: "Delivery", icon: Bike, color: "bg-brand-red", angle: 180 },
+  { label: "PDV", icon: ShoppingCart, color: "bg-brand-yellow", angle: 240 },
+  { label: "Integrações", icon: Layers, color: "bg-brand-dark", angle: 300 },
 ];
 
 function position(angleDeg: number, radiusPct: number) {
@@ -35,11 +35,11 @@ export function MetricasDominus() {
           
           {/* Coluna da Esquerda: Título, Subtítulo e CTA alinhados à esquerda */}
           <div className="text-left">
-            <h2 className="font-display text-3xl font-bold text-waybit-dark sm:text-4xl lg:text-4xl">
-              Seu negócio mais <span className="italic text-waybit-cyan">rápido</span>, seu dia mais{" "}
-              <span className="italic text-waybit-green">produtivo</span>!
+            <h2 className="font-display text-3xl font-bold text-brand-dark sm:text-4xl lg:text-4xl">
+              Seu negócio mais <span className="italic text-brand-blue">rápido</span>, seu dia mais{" "}
+              <span className="italic text-brand-green">produtivo</span>!
             </h2>
-            <p className="mt-4 max-w-xl text-base text-waybit-dark/65 sm:text-lg">
+            <p className="mt-4 max-w-xl text-base text-brand-text sm:text-lg">
               O Dominus centraliza a operação da sua empresa: tudo conversa com tudo, sem retrabalho e
               sem planilhas soltas.
             </p>
@@ -49,7 +49,7 @@ export function MetricasDominus() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-flex rounded-full bg-waybit-green px-8 py-3.5 font-display text-sm font-semibold text-white shadow-md transition-all hover:brightness-95 hover:shadow-lg"
+                className="mt-8 inline-flex rounded-full bg-brand-green px-8 py-3.5 font-display text-sm font-semibold text-white shadow-md transition-all hover:brightness-95 hover:shadow-lg"
               >
                 Falar com um especialista
               </a>
@@ -58,10 +58,10 @@ export function MetricasDominus() {
 
           {/* Coluna da Direita: Diagrama Circular */}
           <div className="relative mx-auto aspect-square w-full max-w-[480px]">
-            <div className="absolute inset-[12%] rounded-full border-2 border-dashed border-waybit-cyan/30" />
+            <div className="absolute inset-[12%] rounded-full border-2 border-dashed border-brand-blue/30" />
             
             {/* Centro */}
-            <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-4 shadow-[0_15px_45px_-10px_rgba(47,180,233,0.4)] ring-4 ring-waybit-cyan/15 sm:h-36 sm:w-36 sm:p-5">
+            <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-4 shadow-[0_15px_45px_-10px_rgba(47,180,233,0.4)] ring-4 ring-brand-blue/15 sm:h-36 sm:w-36 sm:p-5">
               <img
                 src="/src/assets/Logo-dominus.png"
                 alt="Dominus — ERP Waybit"
@@ -84,7 +84,7 @@ export function MetricasDominus() {
                   >
                     <Icon className="h-6 w-6 text-white" />
                   </span>
-                  <span className="whitespace-nowrap rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-waybit-dark shadow-sm sm:text-xs">
+                  <span className="whitespace-nowrap rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-brand-dark shadow-sm sm:text-xs">
                     {n.label}
                   </span>
                 </div>
