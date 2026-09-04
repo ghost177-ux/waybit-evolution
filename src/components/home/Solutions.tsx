@@ -19,11 +19,11 @@ export function Solutions() {
           subtitle="Clique na solução para seu segmento e conheça mais:"
         />
 
-        <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-6">
           {solutions.map((s) => {
             const colors = colorClasses[s.color];
             return (
-              <li key={s.name} className="sm:last:col-span-2 sm:last:mx-auto sm:last:w-1/2 lg:last:col-span-1 lg:last:w-full lg:[&:nth-last-child(2)]:col-start-1 lg:[&:nth-last-child(2)]:translate-x-1/2 lg:[&:last-child]:translate-x-1/2">
+              <li key={s.name} className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
                 <a
                   href={s.href}
                   target="_blank"
