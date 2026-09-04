@@ -16,7 +16,7 @@ export function Cases() {
   };
 
   return (
-    <section className="bg-background py-16 lg:py-24" aria-label="Cases e depoimentos">
+    <section className="bg-background py-8 lg:py-16" aria-label="Cases e depoimentos">
       <Container>
         {/*<SectionHeading
           title={
