@@ -36,7 +36,7 @@ export function Solutions() {
                   <div className="flex flex-col items-center gap-4">
                     <span
                       className={cn(
-                        "flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl shadow-sm",
+                        "flex h-16 w-16 shrink-0 items-center justify-center rounded-lg shadow-sm",
                         colors.icon,
                       )}
                     >
