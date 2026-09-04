@@ -1,12 +1,18 @@
 import { Facebook, Headset, Instagram, Mail, MessageCircle } from "lucide-react";
 import { contact, footer } from "@/content/home";
 import { Container } from "./shared";
+import logoWhite from "@/assets/Logo-White.png";
 
 export function Footer() {
   return (
     <footer className="bg-brand-dark text-white" aria-label="Rodapé">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
+          <img
+            src={logoWhite}
+            alt="Waybit"
+            className="mb-4 h-10 w-auto object-contain"
+          />
           <p className="max-w-xs font-display text-lg font-semibold leading-snug">
             {footer.slogan}
           </p>
