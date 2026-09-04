@@ -278,7 +278,7 @@ export const solutions: Solution[] = [
   },
   {
     name: "Dominus Center",
-    description: "Sistema de gestão para" <br /> "mecânica",
+    description: "Sistema de gestão para <br/> mecânica",
     href: "https://waybit.com.br/dominus-center/",
     logo: logoDominusCenter.url,
     logoAlt: "Logo Dominus Center",
@@ -286,7 +286,7 @@ export const solutions: Solution[] = [
   },
   {
     name: "Dominus Food",
-    description: "Sistema de gestão para" <br /> "Restaurante",
+    description: "Sistema de gestão para <br/> Restaurante",
     href: "https://waybit.com.br/dominus-food/",
     logo: logoDominusFood.url,
     logoAlt: "Logo Dominus Food",
@@ -294,7 +294,7 @@ export const solutions: Solution[] = [
   },
   {
     name: "Xpert",
-    description: "Sistema de gestão para" <br /> "posto",
+    description: "Sistema de gestão para <br/> posto",
     href: "https://xpert.com.br/",
     logo: logoXpert.url,
     logoAlt: "Logo Xpert",
@@ -302,7 +302,7 @@ export const solutions: Solution[] = [
   },
   {
     name: "Certbit",
-    description: "Adquira já o seu" <br /> "certificado digital",
+    description: "Adquira já o seu <br/> certificado digital",
     href: "https://certbit.com.br/",
     logo: logoCertbit.url,
     logoAlt: "Logo Certbit",
