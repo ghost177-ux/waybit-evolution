@@ -13,7 +13,7 @@ export function Footer() {
             alt="Waybit"
             className="mb-4 h-14 w-auto object-contain"
           />
-          <p className="max-w-xs font-display text-lg font-semibold leading-snug">
+          <p className="max-w-xs font-display text-base font-normal leading-snug">
             {footer.slogan}
           </p>
           <div className="mt-6 space-y-2 text-sm">
