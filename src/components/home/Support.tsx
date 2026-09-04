@@ -1,15 +1,15 @@
 import { contact, support } from "@/content/home";
 import { Container } from "./shared";
-import suporteImg from "@/assets/suporte.png"; // Importe a nova imagem direto aqui se preferir
+import suporteImg from "@/assets/suporte.png";
 
 export function Support() {
   return (
     <section id="suporte" className="bg-background py-16 lg:py-20" aria-label="Suporte">
       <Container>
-        {/* items-center garante o alinhamento vertical com a imagem */}
+        {/* items-center alinha o texto perfeitamente com o centro da imagem */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           
-          {/* Bloco de Texto centralizado visualmente */}
+          {/* Bloco de Texto centralizado verticalmente */}
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl lg:text-4xl">
               {support.title}
@@ -29,13 +29,13 @@ export function Support() {
             </div>
           </div>
 
-          {/* Bloco da Imagem corrigida */}
+          {/* Bloco da Imagem: sem arredondamento e um pouco maior (max-w-lg) */}
           <div className="flex justify-center lg:justify-end">
             <img
-              src={suporteImg} // Ou support.image caso esteja configurado no home.ts
+              src={suporteImg}
               alt="Suporte técnico Waybit"
               loading="lazy"
-              className="w-full max-w-md rounded-2xl object-cover shadow-sm"
+              className="w-full max-w-lg object-contain"
             />
           </div>
 
