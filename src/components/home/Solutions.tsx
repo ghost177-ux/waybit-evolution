@@ -47,7 +47,10 @@ export function Solutions() {
                     </h3>
                   </div>
                   {/* Mudança aqui: mt-4 deixa o subtítulo a ~16px do título */}
-                  <p className="mt-4 text-base text-brand-text">{s.description}</p>
+                  <p 
+                    className="mt-4 text-base text-brand-text"
+                    dangerouslySetInnerHTML={{ __html: s.description }}
+                  />
                 </a>
               </li>
             );
