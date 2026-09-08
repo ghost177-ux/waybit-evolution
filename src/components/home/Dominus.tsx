@@ -1,6 +1,8 @@
 import type { LucideIcon } from "lucide-react";
 import { Package, FileText, BarChart3, Bike, ShoppingCart, Layers } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/site";
+import { contact } from "@/content/home";
+
+const WHATSAPP_URL = contact.whatsapp;
 
 interface NodeItem {
   label: string;
