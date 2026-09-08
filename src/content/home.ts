@@ -144,10 +144,30 @@ export interface Metric {
 }
 
 export const metrics: Metric[] = [
-  { icon: "timer", value: "30", prefix: "+De", suffix: "% economia de tempo" },
-  { icon: "people", value: "1.000", prefix: "+De", suffix: "clientes" },
-  { icon: "star", value: "9.6", prefix: "+De", suffix: "/10 satisfação" },
-  { icon: "cake", value: "15", prefix: "+De", suffix: "anos" },
+  {
+    icon: "timer",
+    value: "30",
+    prefix: "+ De",
+    suffix: "% de economia de tempo em nossos clientes.",
+  },
+  {
+    icon: "people",
+    value: "1.000",
+    prefix: "+ De",
+    suffix: " clientes atendidos pelo Brasil.",
+  },
+  {
+    icon: "star",
+    value: "9.6",
+    prefix: "+ De",
+    suffix: "/10 em nota de satisfação de clientes.",
+  },
+  {
+    icon: "cake",
+    value: "15",
+    prefix: "+ De",
+    suffix: " anos de experiência em sistema de gestão.",
+  },
 ];
 
 export interface DominusBenefit {
