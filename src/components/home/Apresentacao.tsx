@@ -1,23 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import apresent from "@/assets/apresent.png.asset.json";
 import apresentFundo from "@/assets/apresent-fundo.jpg.asset.json";
 
 export default function Apresentacao() {
   const [open, setOpen] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const scrolled = window.innerHeight - rect.top;
+      setOffset(scrolled * 0.08);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section id="apresentacao" className="relative z-10 w-full bg-white py-16">
-      {/* Fundo ocupando metade inferior */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2">
+    <section
+      ref={sectionRef}
+      id="apresentacao"
+      className="relative z-10 w-full overflow-hidden bg-white py-16"
+    >
+      {/* Fundo ocupando a maior parte da altura com parallax */}
+      <div className="absolute bottom-0 left-0 w-full h-[75%] overflow-hidden">
         <img
           src={apresentFundo.url}
           alt="Fundo apresentação"
-          className="w-full h-full object-cover"
+          className="w-full h-[120%] object-cover transition-transform duration-100 will-change-transform"
+          style={{ transform: `translateY(${offset}px)` }}
         />
       </div>
 
       {/* Imagem principal */}
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto w-[90%] max-w-4xl">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
