@@ -19,8 +19,8 @@ export default function Apresentacao() {
         />
       </div>
 
-      {/* Imagem principal menor */}
-      <div className="relative mx-auto w-[80%] max-w-3xl">
+      {/* Imagem principal menor e mais alta */}
+      <div className="relative mx-auto -mt-12 w-[70%] max-w-3xl">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
@@ -39,8 +39,8 @@ export default function Apresentacao() {
       </div>
 
       {/* Frase abaixo da imagem */}
-      <div className="relative mx-auto mt-8 w-[90%] max-w-2xl text-center">
-        <p className="text-lg font-semibold text-brand-dark">
+      <div className="relative mx-auto mt-10 w-[90%] max-w-2xl text-center">
+        <p className="text-2xl font-bold text-white">
           Conheça melhor o Dominus e veja o que Ele pode fazer por você
         </p>
       </div>
@@ -70,6 +70,7 @@ export default function Apresentacao() {
     </section>
   );
 }
+
 
 
 {/*import React, { useEffect, useRef, useState } from "react";
