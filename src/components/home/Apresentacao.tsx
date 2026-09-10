@@ -6,7 +6,7 @@ export default function Apresentacao() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="apresentacao" className="relative w-full bg-white py-16">
+    <section id="apresentacao" className="relative z-10 w-full bg-white py-16">
       {/* Fundo ocupando metade inferior */}
       <div className="absolute bottom-0 left-0 w-full h-1/2">
         <img
