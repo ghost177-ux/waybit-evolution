@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { TopBar } from "@/components/home/TopBar";
 import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
-//import { Segments } from "@/components/home/Segments";
+import { Segments } from "@/components/home/Segments";
 import { Metrics } from "@/components/home/Metrics";
 import { Dominus } from "@/components/home/Dominus";
-//import { DominusBenefits } from "@/components/home/DominusBenefits";
+import { DominusBenefits } from "@/components/home/DominusBenefits";
 import { Cases } from "@/components/home/Cases";
 import { Support } from "@/components/home/Support";
 import { Solutions } from "@/components/home/Solutions";
+import { BlogPosts } from "@/components/home/BlogPosts";
 import { Footer } from "@/components/home/Footer";
-//import { MetricasDominus } from "@/components/home/MetricasDominus";
-import  Apresentacao  from "@/components/home/Apresentacao";
+import Apresentacao from "@/components/home/Apresentacao";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,14 +42,15 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        {/*<Segments />*/}
+        <Segments />
         <Metrics />
-        {/*<DominusBenefits />*/}
+        <Dominus />
+        <DominusBenefits />
         <Cases />
         <Support />
         <Solutions />
         <Apresentacao />
-        <Dominus />
+        <BlogPosts />
       </main>
       <Footer />
     </div>

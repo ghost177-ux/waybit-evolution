@@ -52,25 +52,30 @@ function MetricIcon({ icon }: { icon: MetricIconKey }) {
 
 export function Metrics() {
   return (
-    <section className="bg-background py-16 lg:py-20" aria-label="Números da Waybit">
+    <section className="bg-background py-14 lg:py-18" aria-label="Números da Waybit">
       <Container>
-        <div className="overflow-hidden rounded-2xl bg-card shadow-lg">
+        <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_24px_80px_-36px_rgba(31,58,113,0.35)]">
           <div className="brand-stripes h-1.5" aria-hidden />
-          <dl className="grid grid-cols-2 gap-8 px-6 py-10 sm:px-10 lg:grid-cols-4 lg:py-12">
+
+          <dl className="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5 lg:px-6 lg:py-6">
             {metrics.map((m) => (
-              <div key={m.suffix} className="flex flex-col items-center text-center">
-                <MetricIcon icon={m.icon} />
-                <dt className="sr-only">{`${m.prefix} ${m.value} ${m.suffix}`}</dt>
-                <dd className="mt-4 text-sm text-brand-text">
-                  {m.prefix}{" "}
-                  <span className="font-display text-3xl font-bold text-brand-dark">
-                    {m.value}
-                  </span>
+              <div
+                key={m.suffix}
+                className="flex flex-col items-center rounded-2xl border border-border bg-brand-soft/50 p-5 text-center"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-brand-blue/10">
+                  <MetricIcon icon={m.icon} />
+                </div>
+
+                <dt className="mt-3 text-sm font-medium text-brand-text">{m.prefix}</dt>
+                <dd className="mt-1 font-display text-3xl font-bold text-brand-dark md:text-4xl">
+                  {m.value}
                 </dd>
-                <dd className="text-sm text-brand-text">{m.suffix}</dd>
+                <dd className="mt-2 text-sm leading-relaxed text-brand-text">{m.suffix}</dd>
               </div>
             ))}
           </dl>
+
           <div className="brand-stripes h-1.5" aria-hidden />
         </div>
       </Container>

@@ -11,9 +11,9 @@ export function Header() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <header className="relative z-40 bg-background">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-sm">
       <Container className="flex h-20 items-center justify-between gap-6">
-        <a href="/" aria-label="Waybit — página inicial" className="shrink-0">
+        <a href="/" aria-label="Waybit — página inicial" className="shrink-0 transition-transform hover:scale-[1.01]">
           <img src={logoWaybit.url} alt="Waybit" className="h-9 w-auto sm:h-11" />
         </a>
 
@@ -48,7 +48,7 @@ export function Header() {
             href={contact.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-brand-green px-5 py-2.5 font-display text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.03] sm:inline-block"
+            className="hidden rounded-full bg-brand-green px-5 py-2.5 font-display text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:inline-block"
           >
             Falar com Especialista
           </a>

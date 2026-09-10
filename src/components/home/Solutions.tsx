@@ -14,12 +14,13 @@ export function Solutions() {
   return (
     <section id="solucoes" className="bg-brand-soft py-16 lg:py-20" aria-label="Soluções por segmento">
       <Container>
-        <SectionHeading className="mx-auto max-w-4xl text-center"
+        <SectionHeading
+          className="mx-auto max-w-4xl text-center"
           title="Conheça um sistema de gestão empresarial completo com o melhor suporte do mercado!"
           subtitle="Clique na solução para seu segmento e conheça mais:"
         />
 
-        <ul className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-6">
+        <ul className="mx-auto mt-12 flex max-w-5xl flex-wrap justify-center gap-6">
           {solutions.map((s) => {
             const colors = colorClasses[s.color];
             return (
@@ -29,14 +30,14 @@ export function Solutions() {
                   target="_blank"
                   rel="noreferrer"
                   className={cn(
-                    "group flex h-full flex-col items-center rounded-xl border-t-4 bg-card p-6 pt-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md",
+                    "group flex h-full min-h-[260px] flex-col items-center justify-between rounded-2xl border-t-4 bg-card p-6 pt-8 text-center shadow-[0_18px_38px_-30px_rgba(31,58,113,0.5)] transition-all hover:-translate-y-1 hover:shadow-lg",
                     colors.border,
                   )}
                 >
                   <div className="flex flex-col items-center gap-4">
                     <span
                       className={cn(
-                        "flex h-16 w-16 shrink-0 items-center justify-center rounded-lg shadow-sm",
+                        "flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl shadow-sm",
                         colors.icon,
                       )}
                     >
@@ -46,11 +47,15 @@ export function Solutions() {
                       {s.name}
                     </h3>
                   </div>
-                  {/* Mudança aqui: mt-4 deixa o subtítulo a ~16px do título */}
-                  <p 
+
+                  <p
                     className="mt-4 text-base text-brand-text"
                     dangerouslySetInnerHTML={{ __html: s.description }}
                   />
+
+                  <span className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
+                    Conhecer
+                  </span>
                 </a>
               </li>
             );

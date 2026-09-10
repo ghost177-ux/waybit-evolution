@@ -22,12 +22,14 @@ const NODES: NodeItem[] = [
 
 export function Dominus() {
   return (
-    <section id="parceiro" className="overflow-hidden bg-white px-4 py-16 lg:py-20">
+    <section id="parceiro" className="overflow-hidden bg-white px-4 py-14 lg:py-18">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="text-left">
-            <h2 className="font-display text-3xl font-bold text-brand-dark sm:text-4xl lg:text-4xl">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-brand-blue">
+              Dominus
+            </p>
+            <h2 className="font-display text-3xl font-bold text-brand-dark sm:text-4xl lg:text-[2.7rem]">
               Seu Negócio mais <span className="italic text-brand-blue">rápido</span>, seu dia mais{" "}
               <span className="italic text-brand-green">produtivo</span>!
             </h2>

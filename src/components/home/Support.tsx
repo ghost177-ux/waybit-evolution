@@ -1,20 +1,19 @@
 import { contact, support } from "@/content/home";
 import { Container } from "./shared";
-import suporteImg from "@/assets/suporte.png";
 
 export function Support() {
   return (
-    <section id="suporte" className="bg-background py-12 lg:py-20" aria-label="Suporte">
+    <section id="suporte" className="bg-background py-16 lg:py-20" aria-label="Suporte">
       <Container>
-        {/* items-center alinha o texto perfeitamente com o centro da imagem */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          
-          {/* Bloco de Texto centralizado verticalmente */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl lg:text-4xl">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-brand-blue">
+              Suporte Waybit
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl lg:text-[2.6rem]">
               {support.title}
             </h2>
-            <p className="mt-4 max-w-lg text-base text-brand-text sm:text-lg">
+            <p className="mt-4 max-w-xl text-base text-brand-text sm:text-lg">
               {support.subtitle}
             </p>
             <div>
@@ -22,23 +21,21 @@ export function Support() {
                 href={contact.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-block rounded-md bg-brand-green px-6 py-3 font-display text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                className="mt-8 inline-flex rounded-full bg-brand-green px-6 py-3.5 font-display text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 {support.cta}
               </a>
             </div>
           </div>
 
-          {/* Bloco da Imagem: sem arredondamento e um pouco maior (max-w-lg) */}
           <div className="flex justify-center lg:justify-end">
             <img
-              src={suporteImg}
-              alt="Suporte técnico Waybit"
+              src={support.image}
+              alt={support.imageAlt}
               loading="lazy"
               className="w-full max-w-lg object-contain"
             />
           </div>
-
         </div>
       </Container>
     </section>

@@ -45,7 +45,7 @@ export function Segments() {
                         onClick={(e) => e.preventDefault()}
                         id={`segmento-${item.slug}`}
                         className={cn(
-                          "group flex h-full flex-col items-center gap-2 rounded-xl border border-border bg-background px-3 py-4 text-center text-sm font-medium text-brand-dark shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md",
+                          "group flex h-full flex-col items-center gap-2 rounded-2xl border border-border bg-background px-3 py-4 text-center text-sm font-medium text-brand-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-blue/50 hover:shadow-md",
                           highlight === item.slug && "segment-flash",
                         )}
                       >

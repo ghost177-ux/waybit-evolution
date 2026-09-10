@@ -37,14 +37,14 @@ export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
   };
 
   return (
-    <div className="relative mt-2 w-full max-w-md">
+    <div className="relative mt-4 w-full max-w-md">
       <label
         htmlFor="segment-search"
         className="mb-2 block font-display text-sm font-semibold text-brand-dark"
       >
         Qual seu ramo de atuação?
       </label>
-      <div className="flex items-center gap-2 rounded-full border border-border bg-background p-1.5 shadow-md">
+      <div className="flex items-center gap-2 rounded-full border border-border bg-background p-1.5 shadow-[0_18px_35px_-25px_rgba(31,58,113,0.45)]">
         <input
           id="segment-search"
           ref={inputRef}

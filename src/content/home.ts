@@ -330,6 +330,39 @@ export const solutions: Solution[] = [
   },
 ];
 
+export interface BlogPost {
+  title: string;
+  excerpt: string;
+  href: string;
+}
+
+export const posts: BlogPost[] = [
+  {
+    title: "Quanto custa um sistema para restaurante em 2026?",
+    excerpt:
+      "Entenda os principais valores de mercado, o que influencia no preço e como escolher uma solução que realmente ajude no crescimento do seu negócio.",
+    href: "https://waybit.com.br/quanto-custa-um-sistema-para-restaurante-em-2026-valores-reais/",
+  },
+  {
+    title: "Qual o melhor sistema para restaurante em 2026?",
+    excerpt:
+      "Comparativo completo entre Dominus Food, Saipos, Consumer e outros sistemas populares, para você tomar a melhor decisão com segurança.",
+    href: "https://waybit.com.br/qual-o-melhor-sistema-para-restaurante-em-2026-comparativo-completo-entre-dominus-food-saipos-consumer-e-outros/",
+  },
+  {
+    title: "Novo CNPJ Será Alfanumérico… Você Está Preparado?",
+    excerpt:
+      "Saiba o que muda no cadastro de empresas, como essa mudança pode impactar sua operação e por onde começar a se adaptar.",
+    href: "https://waybit.com.br/novo-cnpj-sera-alfanumerico-voce-esta-preparado/",
+  },
+  {
+    title: "Curva ABC: O que é e Como ela Pode Transformar a Gestão do Seu Negócio",
+    excerpt:
+      "Descubra como aplicar a Curva ABC para otimizar estoques, reduzir desperdícios e aumentar a rentabilidade do seu empreendimento.",
+    href: "https://waybit.com.br/curva-abc-o-que-e-e-como-ela-pode-transformar-a-gestao-do-seu-negocio/",
+  },
+];
+
 export const footer = {
   slogan: "O Sistema de Gestão que traz felicidade!",
   phone: "(22) 3412-2941",

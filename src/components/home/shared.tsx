@@ -91,11 +91,11 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("mx-auto max-w-3xl text-center", className)}>
-      <h2 className="text-2xl font-bold text-brand-dark sm:text-3xl lg:text-4xl">
+      <h2 className="font-display text-2xl font-bold text-brand-dark sm:text-3xl lg:text-4xl">
         {title}
       </h2>
       {subtitle ? (
-        <p className="mt-4 text-base text-brand-text sm:text-lg">{subtitle}</p>
+        <p className="mt-3 text-base text-brand-text sm:text-lg">{subtitle}</p>
       ) : null}
     </div>
   );
