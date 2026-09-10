@@ -43,12 +43,11 @@ function Home() {
         <Hero />
         {/*<Segments />*/}
         <Metrics />
-        <Dominus />
         {/*<DominusBenefits />*/}
         <Cases />
         <Support />
         <Solutions />
-        {/*<MetricasDominus/>*/}
+        <Dominus />
       </main>
       <Footer />
     </div>
