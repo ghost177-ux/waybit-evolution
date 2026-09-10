@@ -12,7 +12,7 @@ export default function Apresentacao() {
       style={{ height: "100vh" }} // altura total da seção
     >
       {/* Fundo ocupando 75% de baixo para cima */}
-      <div className="absolute bottom-0 left-0 w-full h-[75%]">
+      <div className="absolute bottom-0 left-0 w-full h-[65%]">
         <img
           src={apresentFundo.url}
           alt="Fundo apresentação"
@@ -21,7 +21,7 @@ export default function Apresentacao() {
       </div>
 
       {/* Imagem principal ocupando 50% de cima para baixo */}
-      <div className="relative mx-auto w-[60%] h-[50%] flex items-center justify-center">
+      <div className="relative mx-auto w-[60%] h-[60%] flex items-center justify-center">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
