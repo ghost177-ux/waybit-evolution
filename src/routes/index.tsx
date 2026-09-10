@@ -11,6 +11,7 @@ import { Support } from "@/components/home/Support";
 import { Solutions } from "@/components/home/Solutions";
 import { Footer } from "@/components/home/Footer";
 //import { MetricasDominus } from "@/components/home/MetricasDominus";
+import { Apresentacao } from "@/components/home/Apresentacao";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -47,6 +48,7 @@ function Home() {
         <Cases />
         <Support />
         <Solutions />
+        <Apresentacao />
         <Dominus />
       </main>
       <Footer />
