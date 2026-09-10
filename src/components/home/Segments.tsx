@@ -41,8 +41,12 @@ export function Segments() {
                   return (
                     <li key={item.slug}>
                       <a
-                        href="#contato"
-                        onClick={(e) => e.preventDefault()}
+                        href={item.slug === "boteco" ? "/boteco" : "#contato"}
+                        onClick={(e) => {
+                          if (item.slug !== "boteco") {
+                            e.preventDefault();
+                          }
+                        }}
                         id={`segmento-${item.slug}`}
                         className={cn(
                           "group flex h-full flex-col items-center gap-2 rounded-2xl border border-border bg-background px-3 py-4 text-center text-sm font-medium text-brand-dark shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-blue/50 hover:shadow-md",
