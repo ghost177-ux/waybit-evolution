@@ -8,10 +8,10 @@ export default function Apresentacao() {
   return (
     <section
       id="apresentacao"
-      className="relative z-10 w-full overflow-hidden bg-white py-20"
+      className="relative z-10 w-full overflow-hidden bg-white py-28"
     >
-      {/* Fundo ocupando maior parte da altura e pegando no meio da imagem principal */}
-      <div className="absolute bottom-0 left-0 w-full h-[100%] overflow-hidden">
+      {/* Fundo ocupando altura suficiente para pegar no meio da imagem principal */}
+      <div className="absolute bottom-0 left-0 w-full h-[110%] overflow-hidden">
         <img
           src={apresentFundo.url}
           alt="Fundo apresentação"
@@ -19,8 +19,8 @@ export default function Apresentacao() {
         />
       </div>
 
-      {/* Imagem principal menor e mais alta */}
-      <div className="relative mx-auto -mt-28 w-[55%] max-w-xl">
+      {/* Imagem principal menor e posicionada mais acima */}
+      <div className="relative mx-auto -mt-32 w-[50%] max-w-lg">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
@@ -39,7 +39,7 @@ export default function Apresentacao() {
       </div>
 
       {/* Frase abaixo da imagem */}
-      <div className="relative mx-auto mt-14 w-[95%] max-w-4xl text-center">
+      <div className="relative mx-auto mt-16 w-[95%] max-w-5xl text-center">
         <p
           className="font-sans font-bold text-white"
           style={{ fontSize: "40px" }}
@@ -73,8 +73,6 @@ export default function Apresentacao() {
     </section>
   );
 }
-
-
 
 
 
