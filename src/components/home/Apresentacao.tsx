@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import apresent from "@/assets/apresent.png";
-import apresentFundo from "@/assets/apresent-fundo.jpg";
+import apresent from "@/assets/apresent.png.asset.json";
+import apresentFundo from "@/assets/apresent-fundo.jpg.asset.json";
 
 export default function Apresentacao() {
   const [open, setOpen] = useState(false);
@@ -10,7 +10,7 @@ export default function Apresentacao() {
       {/* Fundo ocupando metade inferior */}
       <div className="absolute bottom-0 left-0 w-full h-1/2">
         <img
-          src={apresentFundo}
+          src={apresentFundo.url}
           alt="Fundo apresentação"
           className="w-full h-full object-cover"
         />
@@ -19,7 +19,7 @@ export default function Apresentacao() {
       {/* Imagem principal */}
       <div className="relative mx-auto max-w-5xl">
         <img
-          src={apresent}
+          src={apresent.url}
           alt="Apresentação Waybit"
           className="w-full object-contain"
         />
