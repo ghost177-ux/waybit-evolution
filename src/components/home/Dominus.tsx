@@ -28,7 +28,7 @@ export function Dominus() {
           
           <div className="text-left">
             <h2 className="font-display text-3xl font-bold text-brand-dark sm:text-4xl lg:text-4xl">
-              Sua Empresa - empresa mais <span className="italic text-brand-blue">rápido</span>, seu dia mais{" "}
+              Seu Negócio mais <span className="italic text-brand-blue">rápido</span>, seu dia mais{" "}
               <span className="italic text-brand-green">produtivo</span>!
             </h2>
             <p className="mt-4 max-w-xl text-base text-brand-text sm:text-lg">
