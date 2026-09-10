@@ -9,19 +9,19 @@ export default function Apresentacao() {
     <section
       id="apresentacao"
       className="relative z-10 w-full overflow-hidden bg-white"
-      style={{ height: "100vh" }} // altura total da seção
+      style={{ height: "60vh" }} // altura total da seção
     >
-      {/* Fundo ocupando 50% de baixo para cima */}
-      <div className="absolute bottom-0 left-0 w-full h-[50%]">
+      {/* Fundo ocupando 70% de baixo para cima */}
+      <div className="absolute bottom-0 left-0 w-full h-[70%]">
         <img
           src={apresentFundo.url}
           alt="Fundo apresentação"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-bottom"
         />
       </div>
 
-      {/* Imagem principal ocupando 70% de cima para baixo */}
-      <div className="relative mx-auto w-[70%] h-[70%] flex items-center justify-center">
+      {/* Imagem principal ocupando 60% de cima para baixo */}
+      <div className="relative mx-auto w-[70%] h-[60%] flex items-center justify-center">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
@@ -74,6 +74,7 @@ export default function Apresentacao() {
     </section>
   );
 }
+
 
 
 {/*import React, { useEffect, useRef, useState } from "react";
