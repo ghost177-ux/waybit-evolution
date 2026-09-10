@@ -11,8 +11,8 @@ export default function Apresentacao() {
       className="relative z-10 w-full overflow-hidden bg-white"
       style={{ height: "100vh" }} // altura total da seção
     >
-      {/* Fundo ocupando 60% de baixo para cima */}
-      <div className="absolute bottom-0 left-0 w-full h-[60%]">
+      {/* Fundo ocupando 50% de baixo para cima */}
+      <div className="absolute bottom-0 left-0 w-full h-[50%]">
         <img
           src={apresentFundo.url}
           alt="Fundo apresentação"
@@ -20,8 +20,8 @@ export default function Apresentacao() {
         />
       </div>
 
-      {/* Imagem principal ocupando 80% de cima para baixo */}
-      <div className="relative mx-auto w-[70%] h-[80%] flex items-center justify-center">
+      {/* Imagem principal ocupando 70% de cima para baixo */}
+      <div className="relative mx-auto w-[70%] h-[70%] flex items-center justify-center">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
@@ -39,11 +39,11 @@ export default function Apresentacao() {
         </button>
       </div>
 
-      {/* Frase abaixo da imagem */}
-      <div className="relative mx-auto mt-4 w-[90%] max-w-4xl text-center">
+      {/* Frase abaixo da imagem com distância fixa de 32px */}
+      <div className="relative mx-auto mt-8 w-[90%] max-w-4xl text-center">
         <p
           className="font-sans font-bold text-white"
-          style={{ fontSize: "40px" }}
+          style={{ fontSize: "40px", marginTop: "32px" }}
         >
           Conheça melhor o Dominus e veja o que Ele pode fazer por você
         </p>
@@ -74,8 +74,6 @@ export default function Apresentacao() {
     </section>
   );
 }
-
-
 
 
 {/*import React, { useEffect, useRef, useState } from "react";
