@@ -3,10 +3,14 @@ import {
   ArrowRight,
   BarChart3,
   Beer,
+  CalendarCheck2,
+  CheckCircle2,
   Clock3,
+  MessageSquareQuote,
   PackageCheck,
   ShieldCheck,
   Sparkles,
+  Store,
   TrendingUp,
   Users,
   WalletCards,
@@ -18,20 +22,20 @@ import { Container, SectionHeading } from "@/components/home/shared";
 export const Route = createFileRoute("/boteco")({
   head: () => ({
     meta: [
-      { title: "Dominus Food para Boteco | Waybit" },
+      { title: "Sistema para Boteco | Dominus Food | Waybit" },
       {
         name: "description",
         content:
-          "Sistema para boteco com PDV, estoque, financeiro, delivery e gestão simples. Conheça o Dominus Food e transforme sua operação.",
+          "Sistema para boteco com PDV, estoque, financeiro, delivery e gestão inteligente. Conheça o Dominus Food e transforme a operação do seu negócio.",
       },
       {
         property: "og:title",
-        content: "Dominus Food para Boteco | Waybit",
+        content: "Sistema para Boteco | Dominus Food | Waybit",
       },
       {
         property: "og:description",
         content:
-          "Sistema para boteco com controle de caixa, estoque, financeiro, delivery e operação mais eficiente.",
+          "Controle de caixa, estoque, comandas, delivery e relatórios em um só sistema para boteco. Descubra o Dominus Food.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -40,79 +44,153 @@ export const Route = createFileRoute("/boteco")({
   component: BotecoPage,
 });
 
+const stats = [
+  { value: "+30%", label: "de economia de tempo" },
+  { value: "+1.000", label: "clientes atendidos" },
+  { value: "9.6/10", label: "nota média de satisfação" },
+  { value: "15 anos", label: "de experiência em gestão" },
+];
+
 const audience = [
   {
     title: "Botequim tradicional",
-    description: "Quem trabalha com mesas, balcão, cardápio fixo e precisa manter o ritmo sem perder controle.",
+    description: "Quem vive do balcão, das mesas e da rapidez no atendimento sem perder o controle da operação.",
     icon: Beer,
   },
   {
     title: "Boteco com delivery",
-    description: "Quem vende por delivery e precisa organizar pedidos, estoque e atendimentos sem confusão.",
-    icon: TrendingUp,
+    description: "Quem precisa organizar pedidos, comandas e entregas em um fluxo simples, rápido e confiável.",
+    icon: Store,
   },
   {
     title: "Empreendedor em crescimento",
-    description: "Quem quer escalar o negócio com menos retrabalho, mais previsibilidade e melhor processo.",
+    description: "Quem quer crescer com planejamento, menos retrabalho e decisões baseadas em dados reais.",
     icon: Users,
   },
 ];
 
 const problems = [
   {
-    title: "Controle do caixa e vendas sem visibilidade",
+    title: "Caixa e vendas sem visibilidade",
     description:
-      "Sem um sistema organizado, é fácil perder rendimento, esquecer vendas e ter dificuldade para fechar o dia.",
+      "Sem um controle claro, é fácil perder faturamento, esquecer lançamentos e fechar o dia sem saber o real resultado.",
     icon: WalletCards,
   },
   {
     title: "Estoque e desperdício fora de controle",
     description:
-      "Falta de acompanhamento de entradas, saídas e produtos mais vendidos gera prejuízo e demora para reagir.",
+      "Faltam registros confiáveis de entradas, saídas e itens mais vendidos, o que gera perda e prejuízo.",
     icon: PackageCheck,
   },
   {
     title: "Mesas, comandas e delivery espalhados",
     description:
-      "Quando o atendimento fica manual, o ambiente fica mais caótico, a equipe corre mais e o cliente sente.",
+      "Sem um fluxo organizado, a equipe roda em excesso, atende mais lento e comete erros no serviço.",
     icon: Clock3,
   },
   {
     title: "Decisões sem dados confiáveis",
     description:
-      "Sem relatórios claros, o dono fica no improviso, toma decisões pelo “achismo” e perde oportunidades.",
+      "Quando o dono trabalha no improviso, o negócio se desgasta e o crescimento fica mais difícil.",
     icon: BarChart3,
   },
 ];
 
 const features = [
   {
-    title: "PDV rápido e intuitivo",
-    description: "Atendimento ágil no balcão e nas mesas com menos erro e mais agilidade na operação.",
+    title: "Controle de mesa e balcão",
+    description: "Organize pedidos, mesas e caixa em um único lugar para atender com agilidade e reduzir erros.",
     icon: Sparkles,
   },
   {
-    title: "Controle de estoque em tempo real",
-    description: "Acompanhe entradas, saídas, itens mais vendidos e evite faltas e desperdícios.",
+    title: "Controle de estoque inteligente",
+    description: "Acompanhe entradas, saídas e reposição com alertas e visão clara do que realmente movimenta o negócio.",
     icon: PackageCheck,
   },
   {
-    title: "Financeiro organizado",
-    description: "Entenda o fluxo de caixa, contas e movimentações com relatórios claros e prontos para decidir.",
-    icon: WalletCards,
+    title: "Comanda eletrônica para garçom",
+    description: "Acelere o atendimento no salão, evite confusão e deixe o envio de pedidos mais seguro e rápido.",
+    icon: CalendarCheck2,
   },
   {
-    title: "Delivery e comandas integrados",
-    description: "Centralize pedidos, mesas e entregas em uma única rotina, deixando o atendimento mais eficiente.",
-    icon: ArrowRight,
+    title: "PDV rápido e intuitivo",
+    description: "Venda com velocidade, emita documentos e use o sistema de forma simples, mesmo em momentos de pico.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Relatórios em tempo real",
+    description: "Veja faturamento, produtos mais vendidos e rentabilidade diária para tomar decisões com confiança.",
+    icon: BarChart3,
+  },
+  {
+    title: "Suporte multicanal e personalizado",
+    description: "Tenha ajuda técnica rápida e acompanhamento para manter seu boteco funcionando sem travar a operação.",
+    icon: Users,
   },
 ];
 
-const stats = [
-  { value: "+30%", label: "mais agilidade no atendimento" },
-  { value: "+20%", label: "melhor controle de estoque" },
-  { value: "24h", label: "suporte para sua rotina" },
-  { value: "1 sistema", label: "para caixa, estoque e financeiro" },
+const advantages = [
+  "Integração com iFood e outros apps de delivery sem custo adicional",
+  "Controle de estoque completo e automatizado",
+  "Comandas digitais e atendimento mais ágil",
+  "Relatórios completos para acompanhar lucro e performance",
+  "PDV rápido, fácil e intuitivo",
+  "Equipe organizada com processos claros",
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Agende sua demonstração",
+    description: "Fale com a nossa equipe e entenda como o Dominus Food se encaixa no seu negócio.",
+  },
+  {
+    number: "02",
+    title: "Nossa equipe apresenta o sistema",
+    description: "Mostraremos a estrutura completa do sistema e responderemos todas as suas dúvidas.",
+  },
+  {
+    number: "03",
+    title: "Comece a operar com mais controle",
+    description: "Coloque o sistema para funcionar na sua rotina e veja os resultados em pouco tempo.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Hedon Bistro",
+    quote:
+      "Um sistema inovador, com delivery, financeiro e controle de estoque. Eu indico a Waybit de olho fechado.",
+  },
+  {
+    name: "Batata Recheada do França",
+    quote:
+      "A Waybit facilita muito aqui. Eles ajudam com relatórios completos e agilizam o atendimento com a comanda na máquina.",
+  },
+  {
+    name: "Casa da Praia",
+    quote:
+      "Hoje eu tenho agilidade para atender meu cliente utilizando o celular, fazendo a comanda e o pedido sai imediatamente na cozinha.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Como controlar melhor o estoque e evitar perdas?",
+    a: "O Dominus Food centraliza entradas, saídas, itens mais vendidos e alertas de reposição, reduzindo desperdício e mantendo o estoque mais saudável.",
+  },
+  {
+    q: "O sistema integra comandas digitais com o caixa?",
+    a: "Sim. O sistema conecta salão, caixa e cozinha em um fluxo unificado, ajudando sua equipe a atender com mais rapidez e menos erros.",
+  },
+  {
+    q: "Funciona sem internet ou em caso de queda?",
+    a: "Sim. O sistema foi pensado para operar com mais confiabilidade, incluindo contingência para manter a operação em funcionamento quando necessário.",
+  },
+  {
+    q: "Tem integração com apps de delivery e meios de pagamento?",
+    a: "Sim. O Dominus Food se conecta com canais importantes do mercado para facilitar o atendimento, a gestão e o fechamento do negócio.",
+  },
 ];
 
 function BotecoPage() {
@@ -140,17 +218,20 @@ function BotecoPage() {
             <a href="#solucao" className="transition hover:text-[#FC4242]">
               Solução
             </a>
+            <a href="#faq" className="transition hover:text-[#FC4242]">
+              FAQ
+            </a>
             <a href="#contato" className="transition hover:text-[#FC4242]">
               Contato
             </a>
           </nav>
 
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-full border border-[#d7d7d7] bg-white px-4 py-2 text-sm font-semibold text-[#1f1f1f] transition hover:border-[#FC4242] hover:text-[#FC4242]"
+          <a
+            href="#contato"
+            className="inline-flex items-center justify-center rounded-full bg-[#FC4242] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(252,66,66,0.28)] transition hover:bg-[#e63737]"
           >
-            Voltar para a home
-          </Link>
+            Agendar demonstração
+          </a>
         </Container>
       </header>
 
@@ -158,17 +239,17 @@ function BotecoPage() {
         <section className="bg-white py-16 lg:py-24">
           <Container className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <p className="inline-flex items-center rounded-full border border-[#ffd1d1] bg-[#fff1f1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#d83838]">
+              <p className="inline-flex items-center rounded-full border border-[#ffd1d1] bg-[#fff1f1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#d83838]">
                 Sistema para boteco
               </p>
 
               <h1 className="mt-6 max-w-xl font-display text-4xl font-bold leading-tight text-[#1f1f1f] sm:text-5xl lg:text-6xl">
-                A tecnologia que deixa seu boteco mais rápido, organizado e rentável.
+                Você controla seu boteco ou ele controla você?
               </h1>
 
-              <p className="mt-5 max-w-xl text-lg text-[#4b4b4b]">
-                O Dominus Food foi pensado para quem quer controlar caixa, estoque, delivery,
-                comandas e a operação do dia a dia sem depender de planilhas e improvisos.
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#4b4b4b]">
+                Com o Dominus Food, você organiza caixa, estoque, mesas, delivery e financeiro em um único sistema,
+                deixando sua operação mais ágil, mais eficiente e muito mais previsível.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -176,7 +257,7 @@ function BotecoPage() {
                   href="#contato"
                   className="inline-flex items-center justify-center rounded-full bg-[#FC4242] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(252,66,66,0.28)] transition hover:bg-[#e63737]"
                 >
-                  Falar com especialista
+                  Quero transformar meu boteco
                 </a>
                 <a
                   href="#solucao"
@@ -197,7 +278,7 @@ function BotecoPage() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#FC4242]/20 via-transparent to-[#d7d7d7] blur-2xl" />
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#FC4242]/25 via-transparent to-[#d7d7d7] blur-2xl" />
               <div className="relative overflow-hidden rounded-[2rem] border border-[#ececec] bg-[#1f1f1f] p-6 text-white shadow-[0_24px_60px_rgba(31,31,31,0.18)]">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
@@ -265,7 +346,7 @@ function BotecoPage() {
                   Feito para <span className="text-[#FC4242]">quem vive do boteco</span>
                 </>
               }
-              subtitle="A rotina de um boteco exige rapidez, organização e boa experiência para o cliente. O Dominus Food foi criado para quem precisa manter tudo funcionando bem, mesmo no volume de pico."
+              subtitle="A operação de um boteco exige rapidez, organização e uma experiência de atendimento que faça o cliente voltar. O Dominus Food foi pensado para isso."
             />
 
             <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -290,10 +371,10 @@ function BotecoPage() {
             <SectionHeading
               title={
                 <>
-                  Os problemas que mais <span className="text-[#FC4242]">atrapalham o boteco</span>
+                  Você também passa por isso? <span className="text-[#FC4242]">Veja os principais problemas</span>
                 </>
               }
-              subtitle="Muita gente toca o negócio com esforço manual, e isso acaba refletindo em vendas perdidas, atendimentos lentos e desgaste da equipe."
+              subtitle="Sem organização, cada parte do negócio vira uma bagunça isolada. O resultado é desgaste, perda de tempo e menos rendimento."
               className="text-white"
             />
 
@@ -317,29 +398,25 @@ function BotecoPage() {
         <section id="solucao" className="bg-white py-16 lg:py-20">
           <Container className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <img
-                src={logoDominusFood.url}
-                alt="Logo Dominus Food"
-                className="h-16 w-auto"
-              />
+              <img src={logoDominusFood.url} alt="Logo Dominus Food" className="h-16 w-auto" />
 
               <h2 className="mt-6 font-display text-3xl font-bold text-[#1f1f1f] sm:text-4xl">
-                A solução é o Dominus Food
+                Dominus Food: a solução para boteco que precisa organizar tudo sem complicar a rotina.
               </h2>
 
               <p className="mt-4 text-lg leading-relaxed text-[#4b4b4b]">
-                O Dominus Food foi pensado para simplificar a operação do seu boteco, unindo PDV,
-                estoque, financeiro e delivery em uma plataforma fácil de usar e poderosa na prática.
+                O Dominus Food foi pensado para unir caixa, estoque, comandas, delivery e relatórios em um só ambiente,
+                dando ao dono mais controle e à equipe muito mais eficiência.
               </p>
 
               <div className="mt-8 space-y-4 text-[#4b4b4b]">
                 <div className="flex items-start gap-3 rounded-2xl border border-[#e6e6e6] bg-[#f9f9f9] p-4">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 text-[#FC4242]" />
-                  <p>Organiza a operação do dia a dia sem depender de vários sistemas separados.</p>
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-[#FC4242]" />
+                  <p>Mais organização para o dia a dia, com menos improviso e menos retrabalho.</p>
                 </div>
                 <div className="flex items-start gap-3 rounded-2xl border border-[#e6e6e6] bg-[#f9f9f9] p-4">
                   <TrendingUp className="mt-0.5 h-5 w-5 text-[#FC4242]" />
-                  <p>Ajuda seu negócio a crescer com previsibilidade, menos retrabalho e melhor controle.</p>
+                  <p>Mais agilidade no atendimento, menos erro e mais capacidade de crescer com segurança.</p>
                 </div>
               </div>
             </div>
@@ -363,17 +440,195 @@ function BotecoPage() {
 
         <section className="bg-[#f5f5f5] py-16 lg:py-20">
           <Container>
-            <div className="rounded-[2rem] bg-gradient-to-r from-[#1f1f1f] via-[#2d2d2d] to-[#1f1f1f] p-8 text-white shadow-[0_24px_60px_rgba(31,31,31,0.16)] lg:p-12">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f5b0b0]">
-                Sistema para boteco
+            <div className="rounded-[2rem] border border-[#e6e6e6] bg-white p-8 shadow-[0_20px_50px_rgba(31,31,31,0.05)] lg:p-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#FC4242]">
+                Outros sistemas x Dominus Food
               </p>
-              <h2 className="mt-4 max-w-2xl font-display text-3xl font-bold sm:text-4xl">
-                O que você precisa ter em toda LP de boteco: clareza, confiança e solução real.
-              </h2>
-              <p className="mt-4 max-w-2xl text-lg text-[#d8d8d8]">
-                É isso que a página precisa comunicar: quem é o público, quais problemas a operação enfrenta,
-                e como o Dominus Food ajuda a transformar esse cenário com organização e eficiência.
-              </p>
+
+              <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-xl">
+                  <h2 className="font-display text-3xl font-bold text-[#1f1f1f] sm:text-4xl">
+                    Não compare apenas preços. Compare o que o sistema entrega.
+                  </h2>
+                </div>
+                <div className="inline-flex items-center rounded-full bg-[#fff1f1] px-4 py-2 text-sm font-semibold text-[#FC4242]">
+                  Mais controle. Mais eficiência. Menos dor de cabeça.
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-6 lg:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-[#e6e6e6] bg-[#f9f9f9] p-6">
+                  <h3 className="text-xl font-bold text-[#1f1f1f]">Outros sistemas</h3>
+                  <ul className="mt-5 space-y-4 text-[#4b4b4b]">
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FC4242]/10 text-[#FC4242]">
+                        ×
+                      </span>
+                      <span>Sem integração com apps de delivery</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FC4242]/10 text-[#FC4242]">
+                        ×
+                      </span>
+                      <span>Controle de estoque limitado ou incompleto</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FC4242]/10 text-[#FC4242]">
+                        ×
+                      </span>
+                      <span>Comandas perdidas e pedidos trocados no salão</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FC4242]/10 text-[#FC4242]">
+                        ×
+                      </span>
+                      <span>Relatórios limitados ou pagos à parte</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-[#FC4242]/20 bg-[#fff1f1] p-6">
+                  <h3 className="text-xl font-bold text-[#1f1f1f]">Dominus Food</h3>
+                  <ul className="mt-5 space-y-4 text-[#4b4b4b]">
+                    {advantages.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FC4242] text-white">
+                          ✓
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        <section className="bg-[#1f1f1f] py-16 text-white lg:py-20">
+          <Container>
+            <SectionHeading
+              title={
+                <>
+                  Dominus: tudo o que o seu boteco precisa em <span className="text-[#FC4242]">um único sistema</span>
+                </>
+              }
+              subtitle="Mais do que tecnologia, o Dominus Food ajuda você a organizar a operação e recuperar tempo para focar no atendimento e no crescimento."
+              className="text-white"
+            />
+
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {[
+                { title: "Controle de mesa e balcão", text: "Automatize pedidos, gerencie mesas com agilidade e reduza erros para aumentar a eficiência do atendimento." },
+                { title: "Controle de estoque inteligente", text: "Gerencie estoque com praticidade, crie combos e receba alertas automáticos para reposição eficiente." },
+                { title: "Comanda eletrônica para garçom", text: "Agilize pedidos no aplicativo do garçom, evite erros e reduza desperdícios no atendimento." },
+                { title: "Usando planilhas ou vários relatórios?", text: "Visualize dados em tempo real, acompanhe lucros e tome decisões rápidas e estratégicas diariamente." },
+                { title: "PDV rápido e intuitivo", text: "Venda com agilidade usando um PDV simples, eficiente e pronto para os picos de demanda." },
+                { title: "Suporte personalizado multicanal", text: "Tenha suporte técnico 24h com atendimento rápido e um time pronto para ajudar você a crescer." },
+              ].map((item) => (
+                <div key={item.title} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[#d8d8d8]">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <section className="bg-white py-16 lg:py-20">
+          <Container>
+            <SectionHeading
+              title={
+                <>
+                  Não é só sobre sistema. É sobre <span className="text-[#FC4242]">recuperar o controle da sua rotina</span>
+                </>
+              }
+              subtitle="Sem organização, cada parte do negócio vira uma bagunça isolada. O Dominus não é apenas um sistema para boteco: é uma forma de simplificar a operação e devolver o controle para você."
+            />
+
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {[
+                { title: "Mais controle", text: "Estoque, finanças e atendimento conectados em uma rotina única." },
+                { title: "Mais agilidade", text: "Menos retrabalho, menos erro e mais velocidade na operação." },
+                { title: "Mais tranquilidade", text: "Você ganha tempo para focar no cliente, no serviço e no crescimento." },
+              ].map((item) => (
+                <div key={item.title} className="rounded-[1.5rem] border border-[#e6e6e6] bg-[#f8f8f8] p-6">
+                  <h3 className="text-xl font-bold text-[#1f1f1f]">{item.title}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-[#4b4b4b]">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <section className="bg-[#f5f5f5] py-16 lg:py-20">
+          <Container>
+            <SectionHeading
+              title={
+                <>
+                  Começar com o Dominus é rápido e <span className="text-[#FC4242]">sem complicação</span>
+                </>
+              }
+              subtitle="A solução foi desenhada para ser simples de apresentar, fácil de adotar e rápida de gerar resultado."
+            />
+
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {steps.map((step) => (
+                <div key={step.number} className="rounded-[1.5rem] border border-[#e6e6e6] bg-white p-6 shadow-[0_12px_30px_rgba(31,31,31,0.04)]">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#FC4242]">{step.number}</p>
+                  <h3 className="mt-4 text-xl font-bold text-[#1f1f1f]">{step.title}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-[#4b4b4b]">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <section className="bg-white py-16 lg:py-20">
+          <Container>
+            <SectionHeading
+              title={
+                <>
+                  O que falam do <span className="text-[#FC4242]">Dominus</span>
+                </>
+              }
+              subtitle="Clientes que usam o sistema compartilham como a operação ficou mais ágil, organizada e lucrativa."
+            />
+
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              {testimonials.map((item) => (
+                <div key={item.name} className="rounded-[1.5rem] border border-[#e6e6e6] bg-[#f8f8f8] p-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FC4242]/10 text-[#FC4242]">
+                    <MessageSquareQuote className="h-5 w-5" />
+                  </div>
+                  <p className="mt-5 text-base leading-relaxed text-[#4b4b4b]">“{item.quote}”</p>
+                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.12em] text-[#1f1f1f]">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <section id="faq" className="bg-[#f5f5f5] py-16 lg:py-20">
+          <Container>
+            <SectionHeading
+              title={
+                <>
+                  FAQ: dúvidas mais <span className="text-[#FC4242]">comuns</span>
+                </>
+              }
+              subtitle="Tudo o que costuma aparecer antes da decisão de começar com o Dominus Food."
+            />
+
+            <div className="mx-auto mt-10 max-w-4xl space-y-4">
+              {faqs.map((item) => (
+                <details key={item.q} className="rounded-[1.25rem] border border-[#e3e3e3] bg-white p-5 shadow-[0_8px_22px_rgba(31,31,31,0.03)]">
+                  <summary className="cursor-pointer list-none text-left text-lg font-semibold text-[#1f1f1f]">
+                    {item.q}
+                  </summary>
+                  <p className="mt-4 text-base leading-relaxed text-[#4b4b4b]">{item.a}</p>
+                </details>
+              ))}
             </div>
           </Container>
         </section>
@@ -384,10 +639,10 @@ function BotecoPage() {
               Vamos simplificar sua operação
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
-              Descubra como o Dominus Food pode ajudar o seu boteco a vender mais e operar melhor.
+              Descubra como o Dominus Food pode transformar o seu boteco.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-[#ffe2e2]">
-              Fale com um especialista e veja como o sistema pode se encaixar no seu negócio.
+              Fale com um especialista e veja como o sistema pode ajudar você a vender mais, operar melhor e crescer com controle.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
