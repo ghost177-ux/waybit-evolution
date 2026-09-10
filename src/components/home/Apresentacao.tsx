@@ -20,8 +20,8 @@ export default function Apresentacao() {
         />
       </div>
 
-      {/* Imagem principal ocupando 65% de cima para baixo */}
-      <div className="relative mx-auto w-[65%] h-[65%] flex items-center justify-center">
+      {/* Imagem principal ocupando 80% de cima para baixo */}
+      <div className="relative mx-auto w-[70%] h-[80%] flex items-center justify-center">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
@@ -74,6 +74,7 @@ export default function Apresentacao() {
     </section>
   );
 }
+
 
 
 
