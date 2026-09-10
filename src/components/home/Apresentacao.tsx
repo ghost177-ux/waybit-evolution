@@ -11,8 +11,8 @@ export default function Apresentacao() {
       className="relative z-10 w-full overflow-hidden bg-white"
       style={{ height: "100vh" }} // altura total da seção
     >
-      {/* Fundo ocupando 75% de baixo para cima */}
-      <div className="absolute bottom-0 left-0 w-full h-[65%]">
+      {/* Fundo ocupando 60% de baixo para cima */}
+      <div className="absolute bottom-0 left-0 w-full h-[60%]">
         <img
           src={apresentFundo.url}
           alt="Fundo apresentação"
@@ -20,12 +20,12 @@ export default function Apresentacao() {
         />
       </div>
 
-      {/* Imagem principal ocupando 75% de cima para baixo */}
-      <div className="relative mx-auto w-full h-[75%] flex items-center justify-center">
+      {/* Imagem principal ocupando 65% de cima para baixo */}
+      <div className="relative mx-auto w-[65%] h-[65%] flex items-center justify-center">
         <img
           src={apresent.url}
           alt="Apresentação Waybit"
-          className="max-h-full object-contain"
+          className="max-h-full max-w-full object-contain"
         />
 
         {/* Ícone Play centralizado */}
@@ -40,7 +40,7 @@ export default function Apresentacao() {
       </div>
 
       {/* Frase abaixo da imagem */}
-      <div className="relative mx-auto mt-6 w-[90%] max-w-4xl text-center">
+      <div className="relative mx-auto mt-4 w-[90%] max-w-4xl text-center">
         <p
           className="font-sans font-bold text-white"
           style={{ fontSize: "40px" }}
@@ -74,7 +74,6 @@ export default function Apresentacao() {
     </section>
   );
 }
-
 
 
 
