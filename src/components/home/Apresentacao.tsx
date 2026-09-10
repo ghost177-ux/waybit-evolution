@@ -20,7 +20,7 @@ export default function Apresentacao() {
         />
       </div>
 
-      {/* Imagem principal ocupando 50% de cima para baixo */}
+      {/* Imagem principal ocupando 75% de cima para baixo */}
       <div className="relative mx-auto w-[75%] h-[75%] flex items-center justify-center">
         <img
           src={apresent.url}
