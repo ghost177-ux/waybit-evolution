@@ -18,6 +18,9 @@ import {
 
 import LogoDominus from "../assets/Logo-dominus.png";
 import LogoWhite from "../assets/Logo-White.png";
+import apresentFundo from "../assets/apresent-fundo.jpg.asset.json";
+import apresent from "../assets/apresent.png.asset.json";
+import suportePessoa from "../assets/suporte-pessoa.png.asset.json";
 import { Container, SectionHeading } from "@/components/home/shared";
 
 export const Route = createFileRoute("/restaurante")({
@@ -215,7 +218,15 @@ function RestaurantePage() {
       </header>
 
       <main id="top">
-        <section id="inicio" className="bg-[#171717] py-16 text-white lg:py-20">
+        <section
+          id="inicio"
+          className="relative overflow-hidden bg-[#171717] py-16 text-white lg:py-20"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(23, 23, 23, 0.96) 0%, rgba(23, 23, 23, 0.76) 42%, rgba(23, 23, 23, 0.48) 100%), url(${apresentFundo.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <p className="inline-flex items-center rounded-full border border-[#FC4242]/30 bg-[#FC4242]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb5b5]">
@@ -256,62 +267,19 @@ function RestaurantePage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-[760px]">
               <div className="absolute inset-0 rounded-[2rem] bg-[#FC4242]/20 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#1f1f1f] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#ffb5b5]">Dashboard</p>
-                    <h2 className="mt-2 text-2xl font-bold text-white">Restaurante em ação</h2>
-                  </div>
-                  <div className="rounded-full bg-[#FC4242] px-3 py-1 text-xs font-semibold text-white">
-                    Online
-                  </div>
-                </div>
-
-                <div className="mt-6 space-y-4">
-                  <div className="rounded-2xl bg-white/5 p-4">
-                    <div className="flex items-center justify-between text-sm text-white/70">
-                      <span>Vendas do dia</span>
-                      <span className="font-semibold text-white">R$ 8.420</span>
-                    </div>
-                    <div className="mt-3 h-2 rounded-full bg-white/10">
-                      <div className="h-2 w-[72%] rounded-full bg-[#FC4242]" />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-2xl bg-[#2b2b2b] p-4">
-                      <p className="text-sm text-white/70">Mesas ativas</p>
-                      <p className="mt-2 text-3xl font-bold text-white">18</p>
-                    </div>
-                    <div className="rounded-2xl bg-[#2b2b2b] p-4">
-                      <p className="text-sm text-white/70">Pedidos delivery</p>
-                      <p className="mt-2 text-3xl font-bold text-white">32</p>
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl bg-[#2b2b2b] p-4">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm text-white/70">Produtos mais vendidos</p>
-                      <CheckCircle2 className="h-4 w-4 text-[#FC4242]" />
-                    </div>
-                    <ul className="mt-4 space-y-3 text-sm text-white">
-                      <li className="flex items-center justify-between">
-                        <span>Batata frita</span>
-                        <span className="text-[#ffb5b5]">42 itens</span>
-                      </li>
-                      <li className="flex items-center justify-between">
-                        <span>Refrigerante</span>
-                        <span className="text-[#ffb5b5]">39 itens</span>
-                      </li>
-                      <li className="flex items-center justify-between">
-                        <span>Hambúrguer</span>
-                        <span className="text-[#ffb5b5]">27 itens</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <div className="relative flex items-center justify-center">
+                <img
+                  src={apresent.url}
+                  alt="Dashboard do Dominus Food"
+                  className="w-full max-w-[760px] rounded-[2rem] border border-white/10 bg-[#1f1f1f] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.40)]"
+                />
+                <img
+                  src={suportePessoa.url}
+                  alt="Pessoa usando o sistema"
+                  className="absolute -bottom-4 right-0 w-32 rounded-[1.5rem] border border-white/10 bg-white/5 p-1 shadow-[0_18px_50px_rgba(0,0,0,0.30)] sm:w-40"
+                />
               </div>
             </div>
           </Container>
@@ -457,45 +425,12 @@ function RestaurantePage() {
                   </ul>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-[#e6e6e6] bg-[#171717] p-5 text-white shadow-[0_20px_50px_rgba(31,31,31,0.15)]">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-[#ffb5b5]">Dashboard</p>
-                      <h3 className="mt-2 text-xl font-bold">Gestão do restaurante</h3>
-                    </div>
-                    <div className="rounded-full bg-[#FC4242] px-3 py-1 text-xs font-semibold">
-                      Live
-                    </div>
-                  </div>
-
-                  <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-2xl bg-white/5 p-4">
-                      <p className="text-sm text-white/70">Vendas</p>
-                      <p className="mt-2 text-2xl font-bold">R$ 12,4k</p>
-                    </div>
-                    <div className="rounded-2xl bg-white/5 p-4">
-                      <p className="text-sm text-white/70">Estoque</p>
-                      <p className="mt-2 text-2xl font-bold">84%</p>
-                    </div>
-                    <div className="rounded-2xl bg-white/5 p-4">
-                      <p className="text-sm text-white/70">Pedidos</p>
-                      <p className="mt-2 text-2xl font-bold">326</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 rounded-2xl bg-white/5 p-4">
-                    <div className="h-32 rounded-xl bg-gradient-to-r from-[#FC4242]/40 via-[#ffb5b5]/20 to-white/5 p-4">
-                      <div className="flex h-full items-end gap-2">
-                        {[32, 45, 26, 60, 44, 78, 58].map((height, index) => (
-                          <div
-                            key={height + index}
-                            className="flex-1 rounded-t-xl bg-gradient-to-t from-[#FC4242] to-[#ffb5b5]"
-                            style={{ height: `${height}%` }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                <div className="rounded-[1.5rem] border border-[#e6e6e6] bg-[#f5f5f5] p-3 shadow-[0_20px_50px_rgba(31,31,31,0.15)]">
+                  <img
+                    src={apresent.url}
+                    alt="Sistema Dominus Food em dispositivo"
+                    className="w-full rounded-[1rem] object-cover"
+                  />
                 </div>
               </div>
             </div>
