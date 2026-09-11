@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BotecoRouteImport } from './routes/boteco'
+import { Route as RestauranteRouteImport } from './routes/restaurante'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -24,30 +25,40 @@ const BotecoRoute = BotecoRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
+const RestauranteRoute = RestauranteRouteImport.update({
+  id: '/restaurante',
+  path: '/restaurante',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/boteco': typeof BotecoRoute
+  '/restaurante': typeof RestauranteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/boteco': typeof BotecoRoute
+  '/restaurante': typeof RestauranteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/boteco': typeof BotecoRoute
+  '/restaurante': typeof RestauranteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/boteco'
+  fullPaths: '/' | '/boteco' | '/restaurante'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/boteco'
-  id: '__root__' | '/' | '/boteco'
+  to: '/' | '/boteco' | '/restaurante'
+  id: '__root__' | '/' | '/boteco' | '/restaurante'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BotecoRoute: typeof BotecoRoute
+  RestauranteRoute: typeof RestauranteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,12 +77,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BotecoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/restaurante': {
+      id: '/restaurante'
+      path: '/restaurante'
+      fullPath: '/restaurante'
+      preLoaderRoute: typeof RestauranteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BotecoRoute: BotecoRoute,
+  RestauranteRoute: RestauranteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

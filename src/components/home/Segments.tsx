@@ -38,12 +38,14 @@ export function Segments() {
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {cat.items.map((item) => {
                   const Icon = segmentIconMap[item.icon];
+                  const dedicatedRoute = item.slug === "boteco" || item.slug === "restaurante";
+
                   return (
                     <li key={item.slug}>
                       <a
-                        href={item.slug === "boteco" ? "/boteco" : "#contato"}
+                        href={item.slug === "boteco" ? "/boteco" : item.slug === "restaurante" ? "/restaurante" : "#contato"}
                         onClick={(e) => {
-                          if (item.slug !== "boteco") {
+                          if (!dedicatedRoute) {
                             e.preventDefault();
                           }
                         }}

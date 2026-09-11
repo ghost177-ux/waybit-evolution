@@ -193,7 +193,7 @@ const faqs = [
   },
 ];
 
-function BotecoPage() {
+export function BotecoPage() {
   return (
     <div className="min-h-screen bg-[#f5f5f5] text-[#1f1f1f]">
       <header className="sticky top-0 z-50 border-b border-[#e6e6e6] bg-white/90 backdrop-blur-sm">
