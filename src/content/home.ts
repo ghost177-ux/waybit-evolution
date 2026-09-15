@@ -19,6 +19,8 @@ export interface HeroTheme {
   color: string;
   /** Text color that stays legible on top of `color`. */
   onColor: string;
+  background: string;
+  label: string;
   banner: string;
   alt: string;
 }
@@ -28,14 +30,18 @@ export const heroThemes: HeroTheme[] = [
   {
     id: "red",
     color: "var(--color-brand-red)",
-    onColor: "#ffffff",
+    onColor: "var(--color-primary-foreground)",
+    background: "var(--color-hero-food)",
+    label: "Food",
     banner: bannerRed.url,
     alt: "Chef de cozinha trabalhando com fogo em cozinha profissional",
   },
   {
     id: "blue",
     color: "var(--color-brand-blue)",
-    onColor: "#ffffff",
+    onColor: "var(--color-primary-foreground)",
+    background: "var(--color-hero-retail)",
+    label: "Varejo",
     banner: bannerBlue.url,
     alt: "Empreendedora organizando araras em loja de roupas",
   },
@@ -43,6 +49,8 @@ export const heroThemes: HeroTheme[] = [
     id: "yellow",
     color: "var(--color-brand-yellow)",
     onColor: "var(--color-brand-dark)",
+    background: "var(--color-hero-autocenter)",
+    label: "Autocenter",
     banner: bannerYellow.url,
     alt: "Mecânico polindo um carro em autocenter",
   },

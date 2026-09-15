@@ -18,13 +18,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-
 const BotecoRoute = BotecoRouteImport.update({
   id: '/boteco',
   path: '/boteco',
   getParentRoute: () => rootRouteImport,
 } as any)
-
 const RestauranteRoute = RestauranteRouteImport.update({
   id: '/restaurante',
   path: '/restaurante',
