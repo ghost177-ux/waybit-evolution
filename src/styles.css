@@ -54,6 +54,11 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-text: var(--brand-text);
   --color-brand-soft: var(--brand-soft);
+  --color-hero-food: var(--hero-food);
+  --color-hero-retail: var(--hero-retail);
+  --color-hero-autocenter: var(--hero-autocenter);
+  --color-hero-dot: var(--hero-dot);
+  --color-hero-shadow: var(--hero-shadow);
 
 
   --font-sans: var(--font-rubik);
@@ -74,6 +79,11 @@
   --brand-dark: oklch(0.348 0 89.9);
   --brand-text: oklch(0.468 0 89.9);
   --brand-soft: oklch(0.98 0.004 236.5);
+  --hero-food: oklch(0.965 0.025 25.8);
+  --hero-retail: oklch(0.96 0.025 227.7);
+  --hero-autocenter: oklch(0.975 0.035 86.2);
+  --hero-dot: oklch(0.78 0.01 250);
+  --hero-shadow: oklch(0.28 0.04 245 / 0.28);
 
   --background: oklch(1 0 0);
   --foreground: var(--brand-dark);

@@ -11,10 +11,10 @@ export function Header() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-sm">
-      <Container className="flex h-20 items-center justify-between gap-6">
+    <header className="absolute left-1/2 top-10 z-50 w-[80vw] -translate-x-1/2 rounded-2xl border border-background/70 bg-background/80 shadow-[0_18px_50px_-28px_var(--color-hero-shadow)] backdrop-blur-md">
+      <Container className="flex h-20 max-w-none items-center justify-between gap-6 px-5 lg:px-8">
         <a href="/" aria-label="Waybit — página inicial" className="shrink-0 transition-transform hover:scale-[1.01]">
-          <img src={logoWaybit.url} alt="Waybit" className="h-9 w-auto sm:h-11" />
+          <img src={logoWaybit.url} alt="Waybit" className="h-9 w-auto sm:h-10" />
         </a>
 
         {/* Desktop nav */}
@@ -48,7 +48,7 @@ export function Header() {
             href={contact.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-brand-green px-5 py-2.5 font-display text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:inline-block"
+            className="hidden rounded-xl bg-brand-green px-5 py-2.5 font-display text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:inline-block"
           >
             Falar com Especialista
           </a>
@@ -67,7 +67,7 @@ export function Header() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "absolute inset-x-0 top-full border-t border-border bg-background shadow-lg transition-all lg:hidden",
+          "absolute inset-x-0 top-[calc(100%+0.5rem)] overflow-hidden rounded-2xl border border-border bg-background shadow-lg transition-all lg:hidden",
           mobileOpen ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
@@ -128,7 +128,7 @@ export function Header() {
               href={contact.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 block rounded-full bg-brand-green px-5 py-3 text-center font-display text-sm font-semibold text-white"
+              className="mt-2 block rounded-xl bg-brand-green px-5 py-3 text-center font-display text-sm font-semibold text-primary-foreground"
             >
               Falar com Especialista
             </a>
