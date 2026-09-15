@@ -17,12 +17,10 @@ export function goToSegment(slug: string) {
 
 export function SegmentSearch({
   placeholder,
-  color,
-  onColor,
+  colorClass,
 }: {
   placeholder: string;
-  color: string;
-  onColor: string;
+  colorClass: string;
 }) {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
@@ -67,8 +65,7 @@ export function SegmentSearch({
         <button
           type="button"
           onClick={submit}
-          className="flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 font-display text-sm font-semibold transition-colors duration-500"
-          style={{ backgroundColor: color, color: onColor }}
+          className={`flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 font-display text-sm font-semibold text-white transition-colors duration-500 ${colorClass}`}
         >
           <Search className="h-4 w-4" aria-hidden />
           Pesquisar

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChefHat, ShoppingBag, Utensils, Wrench, type LucideIcon } from "lucide-react";
+import { ChefHat, ShoppingBag, Wrench, type LucideIcon } from "lucide-react";
 import heroAssets from "@/assets/assets.json";
 import { SegmentSearch } from "./SegmentSearch";
 
@@ -7,20 +7,19 @@ const ROTATE_MS = 5000;
 
 type HeroAsset = {
   id: string;
-  label: string;
+  name: string;
+  colorTheme: string;
   bgTint: string;
-  solidBg: string;
-  onColor: string;
   vibrantColor: string;
+  solidBg: string;
   imagePath: string;
-  alt: string;
   placeholder: string;
 };
 
-const assets = heroAssets as HeroAsset[];
+const assets = heroAssets.heroSegments as HeroAsset[];
 const segmentIcons: Record<string, LucideIcon> = {
   food: ChefHat,
-  retail: ShoppingBag,
+  varejo: ShoppingBag,
   autocenter: Wrench,
 };
 
@@ -35,45 +34,40 @@ export function Hero() {
     return () => clearInterval(id);
   }, []);
 
-  const asset = assets[index] ?? assets[0]!;
+  const currentSegment = assets[index] ?? assets[0]!;
+  const SegmentIcon = segmentIcons[currentSegment.id] ?? ChefHat;
 
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden transition-colors duration-700"
-      style={{ backgroundColor: asset.bgTint }}
+      className={`relative min-h-screen w-full overflow-hidden transition-colors duration-700 ${currentSegment.bgTint}`}
       aria-label="Apresentação"
     >
       <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 pb-16 pt-36 lg:grid-cols-2 lg:gap-20 lg:pt-40">
         <div>
-          <div className="mb-4 flex items-center gap-3" style={{ color: asset.vibrantColor }}>
-            {(() => {
-              const SegmentIcon = segmentIcons[asset.id] ?? Utensils;
-              return <SegmentIcon className="h-7 w-7" aria-hidden />;
-            })()}
+          <div className={`mb-4 flex items-center gap-3 ${currentSegment.vibrantColor}`}>
+            <SegmentIcon className="h-7 w-7" aria-hidden />
             <p className="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
-              {asset.label} | Sistema de gestão empresarial
+              {currentSegment.name} | Sistema de gestão empresarial
             </p>
           </div>
           <h1 className="max-w-xl font-display text-4xl font-bold leading-tight text-slate-800 sm:text-5xl lg:text-[3.45rem] lg:leading-[1.1]">
-            A rotina da sua empresa <span style={{ color: asset.vibrantColor }}>leve</span> e com menos <span style={{ color: asset.vibrantColor }}>esforço.</span>
+            A rotina da sua empresa <span className={currentSegment.vibrantColor}>leve</span> e com menos <span className={currentSegment.vibrantColor}>esforço.</span>
           </h1>
           <SegmentSearch
-            placeholder={asset.placeholder}
-            color={asset.solidBg}
-            onColor={asset.onColor}
+            placeholder={currentSegment.placeholder}
+            colorClass={currentSegment.solidBg}
           />
           <div className="mt-8 flex items-center gap-2" aria-label="Navegação dos segmentos">
             {assets.map((item, itemIndex) => (
               <button
                 key={item.id}
                 type="button"
-                aria-label={`Mostrar segmento ${item.label}`}
+                aria-label={`Mostrar segmento ${item.name}`}
                 aria-current={itemIndex === index}
                 onClick={() => setIndex(itemIndex)}
-                className="h-2 rounded-full transition-all duration-500"
+                className={`h-2 rounded-full transition-all duration-500 ${itemIndex === index ? currentSegment.solidBg : "bg-slate-300"}`}
                 style={{
                   width: itemIndex === index ? "2rem" : "0.5rem",
-                  backgroundColor: itemIndex === index ? asset.solidBg : "#cbd5e1",
                 }}
               />
             ))}
@@ -81,16 +75,16 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="relative aspect-square w-full overflow-hidden rounded-3xl" style={{ backgroundColor: asset.solidBg }}>
+          <div className={`relative aspect-square w-full overflow-hidden rounded-3xl ${currentSegment.solidBg}`}>
             <div className="pointer-events-none absolute right-12 top-12 grid grid-cols-5 gap-1.5 opacity-40">
               {Array.from({ length: 25 }).map((_, i) => (
                 <div key={i} className="h-1.5 w-1.5 rounded-sm bg-current text-slate-700" />
               ))}
             </div>
             <img
-              src={asset.imagePath}
-              alt={asset.alt}
-              className="h-full w-full rounded-3xl object-cover transition-opacity duration-700"
+              src={currentSegment.imagePath}
+              alt={`${currentSegment.name} - imagem do segmento`}
+              className="w-full h-full object-cover rounded-3xl transition-opacity duration-700"
             />
           </div>
         </div>

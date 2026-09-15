@@ -1,35 +1,34 @@
-[
-  {
-    "id": "food",
-    "label": "Food",
-    "bgTint": "#fff1f2",
-    "solidBg": "#d9233f",
-    "onColor": "#ffffff",
-    "vibrantColor": "#c91f3b",
-    "imagePath": "/images/food.jpg",
-    "alt": "Profissional de cozinha segurando um prato preparado",
-    "placeholder": "Ex.: restaurante, delivery ou lanchonete"
-  },
-  {
-    "id": "retail",
-    "label": "Retail",
-    "bgTint": "#eef8ff",
-    "solidBg": "#168bd0",
-    "onColor": "#ffffff",
-    "vibrantColor": "#0875b8",
-    "imagePath": "/images/varejo.jpg",
-    "alt": "Profissional do varejo organizando produtos em uma loja",
-    "placeholder": "Ex.: roupas, mercado ou loja de calçados"
-  },
-  {
-    "id": "autocenter",
-    "label": "Autocenter",
-    "bgTint": "#fff8d8",
-    "solidBg": "#f2c300",
-    "onColor": "#263238",
-    "vibrantColor": "#c59600",
-    "imagePath": "/images/autocenter.jpg",
-    "alt": "Profissional de autocenter segurando um pneu",
-    "placeholder": "Ex.: autocenter, oficina ou autopeças"
-  }
-]
+{
+  "heroSegments": [
+    {
+      "id": "food",
+      "name": "Food",
+      "colorTheme": "red",
+      "bgTint": "bg-red-50/70",
+      "vibrantColor": "text-red-600",
+      "solidBg": "bg-red-600",
+      "imagePath": "/assets/food.png",
+      "placeholder": "Ex: Restaurante, Pizzaria, Delivery..."
+    },
+    {
+      "id": "varejo",
+      "name": "Varejo",
+      "colorTheme": "blue",
+      "bgTint": "bg-blue-50/70",
+      "vibrantColor": "text-blue-600",
+      "solidBg": "bg-blue-600",
+      "imagePath": "/assets/varejo.png",
+      "placeholder": "Ex: Loja de Roupas, Mercado, Autopeças..."
+    },
+    {
+      "id": "autocenter",
+      "name": "Autocenter",
+      "colorTheme": "yellow",
+      "bgTint": "bg-amber-50/70",
+      "vibrantColor": "text-amber-500",
+      "solidBg": "bg-amber-500",
+      "imagePath": "/assets/autoc.png",
+      "placeholder": "Ex: Oficina mecânica, Troca de óleo..."
+    }
+  ]
+}
