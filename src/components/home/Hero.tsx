@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { heroThemes } from "@/content/home";
-import { Container } from "./shared";
+import heroAssets from "@/assets/assets.json";
+import { Header } from "./Header";
 import { SegmentSearch } from "./SegmentSearch";
 
 const ROTATE_MS = 5000;
@@ -10,92 +10,63 @@ export function Hero() {
 
   useEffect(() => {
     const id = setInterval(
-      () => setIndex((i) => (i + 1) % heroThemes.length),
+      () => setIndex((i) => (i + 1) % heroAssets.length),
       ROTATE_MS,
     );
     return () => clearInterval(id);
   }, []);
 
-  const theme = heroThemes[index] ?? heroThemes[0]!;
+  const asset = heroAssets[index] ?? heroAssets[0]!;
 
   return (
-    <section className="overflow-hidden bg-background" aria-label="Apresentação">
-      <Container className="grid items-center gap-8 py-10 lg:grid-cols-2 lg:gap-10 lg:py-14">
+    <section
+      className="relative min-h-screen w-full overflow-hidden transition-colors duration-700"
+      style={{ backgroundColor: asset.bgTint }}
+      aria-label="Apresentação"
+    >
+      <Header />
+      <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 pb-16 pt-36 lg:grid-cols-2 lg:gap-20 lg:pt-40">
         <div>
           <p className="mb-3 font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-brand-blue">
             Sistema de gestão empresarial
           </p>
-          <h1 className="font-display text-4xl font-bold leading-tight text-brand-dark sm:text-5xl lg:text-[3.1rem] lg:leading-[1.12]">
-            A{" "}
-            <em
-              className="not-italic transition-colors duration-700"
-              style={{ color: theme.color }}
-            >
-              rotina
-            </em>{" "}
-            da sua empresa{" "}
-            <em
-              className="transition-colors duration-700"
-              style={{ color: theme.color }}
-            >
-              leve
-            </em>{" "}
-            e com menos{" "}
-            <em
-              className="transition-colors duration-700"
-              style={{ color: theme.color }}
-            >
-              esforço.
-            </em>
+          <h1 className="max-w-xl font-display text-4xl font-bold leading-tight text-slate-800 sm:text-5xl lg:text-[3.45rem] lg:leading-[1.1]">
+            A rotina da sua empresa <span style={{ color: asset.vibrantColor }}>leve</span> e com menos <span style={{ color: asset.vibrantColor }}>esforço.</span>
           </h1>
-          <SegmentSearch themeIndex={index} />
-        </div>
-
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div
-            className="absolute inset-y-0 left-1/2 -right-[50vw] z-0 hidden transition-colors duration-700 lg:block"
-            style={{
-              backgroundColor: theme.color,
-              clipPath: "polygon(6% 0, 100% 0, 100% 100%, 6% 100%, 0 50%)",
-            }}
-          />
-
-          {heroThemes.map((t, i) => (
-            <img
-              key={t.id}
-              src={t.banner}
-              alt={t.alt}
-              width={640}
-              height={569}
-              loading={i === 0 ? "eager" : "lazy"}
-              className="relative z-10 w-full transition-opacity duration-700"
-              style={{
-                opacity: i === index ? 1 : 0,
-                position: i === 0 ? "relative" : "absolute",
-                inset: i === 0 ? undefined : 0,
-              }}
-              aria-hidden={i !== index}
-            />
-          ))}
-
-          <div
-            className="absolute -bottom-6 left-1/2 flex -translate-x-1/2 gap-2"
-            aria-hidden
-          >
-            {heroThemes.map((t, i) => (
-              <span
-                key={t.id}
-                className="h-2 w-2 rounded-full transition-all duration-500"
+          <SegmentSearch placeholder={asset.placeholder} color={asset.solidBg} onColor={asset.onColor} />
+          <div className="mt-8 flex items-center gap-2" aria-label="Navegação dos segmentos">
+            {heroAssets.map((item, itemIndex) => (
+              <button
+                key={item.id}
+                type="button"
+                aria-label={`Mostrar segmento ${item.label}`}
+                aria-current={itemIndex === index}
+                onClick={() => setIndex(itemIndex)}
+                className="h-2 rounded-full transition-all duration-500"
                 style={{
-                  backgroundColor:
-                    i === index ? t.color : "var(--color-border)",
-                  transform: i === index ? "scale(1.3)" : "scale(1)",
+                  width: itemIndex === index ? "2rem" : "0.5rem",
+                  backgroundColor: itemIndex === index ? asset.solidBg : "#cbd5e1",
                 }}
               />
             ))}
           </div>
         </div>
-      </Container>
+
+        <div className="relative mx-auto w-full max-w-[34rem]">
+          <div className="relative aspect-square overflow-hidden rounded-3xl" style={{ backgroundColor: asset.solidBg }}>
+            <div className="absolute top-12 right-12 grid grid-cols-5 gap-1.5 opacity-40 pointer-events-none">
+              {Array.from({ length: 25 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-sm bg-current text-slate-700" />
+              ))}
+            </div>
+            <img
+              src={asset.imagePath}
+              alt={asset.alt}
+              className="absolute inset-0 h-full w-full object-contain object-bottom transition-opacity duration-700"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

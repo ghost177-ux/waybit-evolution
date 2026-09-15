@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import { Search } from "lucide-react";
-import { allSegments, heroThemes } from "@/content/home";
+import { allSegments } from "@/content/home";
 
 function normalize(value: string) {
   return value
@@ -15,12 +15,18 @@ export function goToSegment(slug: string) {
   document.getElementById("segmentos")?.scrollIntoView({ behavior: "smooth" });
 }
 
-export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
+export function SegmentSearch({
+  placeholder,
+  color,
+  onColor,
+}: {
+  placeholder: string;
+  color: string;
+  onColor: string;
+}) {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const theme = heroThemes[themeIndex] ?? heroThemes[0]!;
 
   const matches = useMemo(() => {
     const q = normalize(query.trim());
@@ -50,7 +56,7 @@ export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
           ref={inputRef}
           type="text"
           value={query}
-          placeholder="Digite Aqui..."
+          placeholder={placeholder}
           autoComplete="off"
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setFocused(true)}
@@ -62,7 +68,7 @@ export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
           type="button"
           onClick={submit}
           className="flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 font-display text-sm font-semibold transition-colors duration-500"
-          style={{ backgroundColor: theme.color, color: theme.onColor }}
+          style={{ backgroundColor: color, color: onColor }}
         >
           <Search className="h-4 w-4" aria-hidden />
           Pesquisar
