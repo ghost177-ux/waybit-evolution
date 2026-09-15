@@ -18,84 +18,84 @@ export function Hero() {
 
   const theme = heroThemes[index] ?? heroThemes[0]!;
 
+  const selectSlide = (nextIndex: number) => setIndex(nextIndex);
+
   return (
-    <section className="overflow-hidden bg-background" aria-label="Apresentação">
-      <Container className="grid items-center gap-8 py-10 lg:grid-cols-2 lg:gap-10 lg:py-14">
-        <div>
-          <p className="mb-3 font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-brand-blue">
-            Sistema de gestão empresarial
-          </p>
-          <h1 className="font-display text-4xl font-bold leading-tight text-brand-dark sm:text-5xl lg:text-[3.1rem] lg:leading-[1.12]">
-            A{" "}
+    <section className="relative overflow-hidden bg-background px-[3vw] pb-10 pt-5 sm:px-[5vw] sm:pb-14 sm:pt-7" aria-label="Apresentação">
+      <div
+        className="mx-auto min-h-[650px] w-full max-w-[80vw] overflow-hidden rounded-[2rem] transition-colors duration-700 lg:min-h-[700px]"
+        style={{ backgroundColor: theme.background }}
+      >
+        <Container className="grid min-h-[650px] items-center gap-8 pb-12 pt-32 lg:min-h-[700px] lg:grid-cols-[0.95fr_1.05fr] lg:gap-6 lg:pb-14 lg:pt-36">
+          <div className="relative z-20 max-w-xl">
+            <p className="mb-4 font-display text-xs font-semibold uppercase text-brand-text">
+              Sistema de gestão empresarial
+            </p>
+            <h1 className="font-display text-4xl font-bold leading-[1.13] text-brand-dark sm:text-5xl lg:text-[3.4rem]">
+              A rotina da sua empresa{" "}
             <em
               className="not-italic transition-colors duration-700"
-              style={{ color: theme.color }}
-            >
-              rotina
-            </em>{" "}
-            da sua empresa{" "}
-            <em
-              className="transition-colors duration-700"
               style={{ color: theme.color }}
             >
               leve
             </em>{" "}
             e com menos{" "}
             <em
-              className="transition-colors duration-700"
+              className="not-italic transition-colors duration-700"
               style={{ color: theme.color }}
             >
-              esforço.
+              esforço
             </em>
+            .
           </h1>
-          <SegmentSearch themeIndex={index} />
-        </div>
+            <SegmentSearch themeIndex={index} />
 
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div
-            className="absolute inset-y-0 left-1/2 -right-[50vw] z-0 hidden transition-colors duration-700 lg:block"
-            style={{
-              backgroundColor: theme.color,
-              clipPath: "polygon(6% 0, 100% 0, 100% 100%, 6% 100%, 0 50%)",
-            }}
-          />
+            <div className="mt-7 flex items-center gap-2" role="tablist" aria-label="Escolher segmento">
+              {heroThemes.map((item, itemIndex) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={itemIndex === index}
+                  aria-label={`Exibir segmento ${item.label}`}
+                  onClick={() => selectSlide(itemIndex)}
+                  className="h-2.5 rounded-full transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4"
+                  style={{
+                    backgroundColor: itemIndex === index ? item.color : "var(--color-hero-dot)",
+                    width: itemIndex === index ? "2.25rem" : "0.625rem",
+                    outlineColor: item.color,
+                  }}
+                />
+              ))}
+              <span className="ml-2 text-xs font-medium text-brand-text">{theme.label}</span>
+            </div>
+          </div>
 
-          {heroThemes.map((t, i) => (
-            <img
-              key={t.id}
-              src={t.banner}
-              alt={t.alt}
-              width={640}
-              height={569}
-              loading={i === 0 ? "eager" : "lazy"}
-              className="relative z-10 w-full transition-opacity duration-700"
-              style={{
-                opacity: i === index ? 1 : 0,
-                position: i === 0 ? "relative" : "absolute",
-                inset: i === 0 ? undefined : 0,
-              }}
-              aria-hidden={i !== index}
+          <div className="relative mx-auto aspect-square w-full max-w-[520px] lg:max-w-[590px]">
+            <div
+              className="absolute inset-[13%] rotate-45 rounded-[2.5rem] opacity-95 shadow-[0_30px_80px_-30px_var(--color-hero-shadow)] transition-colors duration-700"
+              style={{ backgroundColor: theme.color }}
+              aria-hidden
             />
-          ))}
-
-          <div
-            className="absolute -bottom-6 left-1/2 flex -translate-x-1/2 gap-2"
-            aria-hidden
-          >
-            {heroThemes.map((t, i) => (
-              <span
-                key={t.id}
-                className="h-2 w-2 rounded-full transition-all duration-500"
+            {heroThemes.map((item, itemIndex) => (
+              <img
+                key={item.id}
+                src={item.banner}
+                alt={item.alt}
+                width={640}
+                height={569}
+                loading={itemIndex === 0 ? "eager" : "lazy"}
+                className="absolute inset-0 z-10 h-full w-full object-contain transition-all duration-700 motion-reduce:transition-none"
                 style={{
-                  backgroundColor:
-                    i === index ? t.color : "var(--color-border)",
-                  transform: i === index ? "scale(1.3)" : "scale(1)",
+                  opacity: itemIndex === index ? 1 : 0,
+                  transform: itemIndex === index ? "scale(1) translateY(0)" : "scale(0.96) translateY(0.75rem)",
                 }}
+                aria-hidden={itemIndex !== index}
               />
             ))}
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 }

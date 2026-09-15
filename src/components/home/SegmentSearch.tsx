@@ -37,14 +37,14 @@ export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
   };
 
   return (
-    <div className="relative mt-4 w-full max-w-md">
+    <div className="relative mt-7 w-full max-w-lg">
       <label
         htmlFor="segment-search"
-        className="mb-2 block font-display text-sm font-semibold text-brand-dark"
+        className="mb-2 block font-display text-base font-semibold text-brand-dark"
       >
         Qual seu ramo de atuação?
       </label>
-      <div className="flex items-center gap-2 rounded-full border border-border bg-background p-1.5 shadow-[0_18px_35px_-25px_rgba(31,58,113,0.45)]">
+      <div className="flex items-center gap-2 rounded-xl border border-border/80 bg-background p-1.5 shadow-[0_18px_35px_-25px_var(--color-hero-shadow)]">
         <input
           id="segment-search"
           ref={inputRef}
@@ -61,7 +61,7 @@ export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
         <button
           type="button"
           onClick={submit}
-          className="flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 font-display text-sm font-semibold transition-colors duration-500"
+          className="flex shrink-0 items-center gap-2 rounded-lg px-5 py-3 font-display text-sm font-semibold transition-colors duration-500"
           style={{ backgroundColor: theme.color, color: theme.onColor }}
         >
           <Search className="h-4 w-4" aria-hidden />
