@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { ChefHat, ShoppingBag, Utensils, Wrench, type LucideIcon } from "lucide-react";
 import heroAssets from "@/assets/assets.json";
-import { Header } from "./Header";
 import { SegmentSearch } from "./SegmentSearch";
 
 const ROTATE_MS = 5000;
@@ -18,6 +18,11 @@ type HeroAsset = {
 };
 
 const assets = heroAssets as HeroAsset[];
+const segmentIcons: Record<string, LucideIcon> = {
+  food: ChefHat,
+  retail: ShoppingBag,
+  autocenter: Wrench,
+};
 
 export function Hero() {
   const [index, setIndex] = useState(0);
@@ -38,12 +43,17 @@ export function Hero() {
       style={{ backgroundColor: asset.bgTint }}
       aria-label="Apresentação"
     >
-      <Header />
       <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 pb-16 pt-36 lg:grid-cols-2 lg:gap-20 lg:pt-40">
         <div>
-          <p className="mb-3 font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-brand-blue">
-            Sistema de gestão empresarial
-          </p>
+          <div className="mb-4 flex items-center gap-3" style={{ color: asset.vibrantColor }}>
+            {(() => {
+              const SegmentIcon = segmentIcons[asset.id] ?? Utensils;
+              return <SegmentIcon className="h-7 w-7" aria-hidden />;
+            })()}
+            <p className="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
+              {asset.label} | Sistema de gestão empresarial
+            </p>
+          </div>
           <h1 className="max-w-xl font-display text-4xl font-bold leading-tight text-slate-800 sm:text-5xl lg:text-[3.45rem] lg:leading-[1.1]">
             A rotina da sua empresa <span style={{ color: asset.vibrantColor }}>leve</span> e com menos <span style={{ color: asset.vibrantColor }}>esforço.</span>
           </h1>
@@ -70,17 +80,17 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[34rem]">
-          <div className="relative aspect-square overflow-hidden rounded-3xl" style={{ backgroundColor: asset.solidBg }}>
-            <div className="absolute top-12 right-12 grid grid-cols-5 gap-1.5 opacity-40 pointer-events-none">
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="relative aspect-square w-full overflow-hidden rounded-3xl" style={{ backgroundColor: asset.solidBg }}>
+            <div className="pointer-events-none absolute right-12 top-12 grid grid-cols-5 gap-1.5 opacity-40">
               {Array.from({ length: 25 }).map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-sm bg-current text-slate-700" />
+                <div key={i} className="h-1.5 w-1.5 rounded-sm bg-current text-slate-700" />
               ))}
             </div>
             <img
               src={asset.imagePath}
               alt={asset.alt}
-              className="absolute inset-0 h-full w-full object-contain object-bottom transition-opacity duration-700"
+              className="h-full w-full rounded-3xl object-cover transition-opacity duration-700"
             />
           </div>
         </div>
