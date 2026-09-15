@@ -56,12 +56,12 @@ export function SegmentSearch({ themeIndex }: { themeIndex: number }) {
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), submit())}
-          className="min-w-0 flex-1 bg-transparent px-4 text-sm text-brand-dark outline-none placeholder:text-brand-text/60"
+          className="min-w-0 flex-1 bg-transparent px-3 text-sm text-brand-dark outline-none placeholder:text-brand-text/60 sm:px-4"
         />
         <button
           type="button"
           onClick={submit}
-          className="flex shrink-0 items-center gap-2 rounded-lg px-5 py-3 font-display text-sm font-semibold transition-colors duration-500"
+          className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-3 font-display text-xs font-semibold transition-colors duration-500 sm:gap-2 sm:px-5 sm:text-sm"
           style={{ backgroundColor: theme.color, color: theme.onColor }}
         >
           <Search className="h-4 w-4" aria-hidden />

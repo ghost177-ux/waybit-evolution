@@ -31,7 +31,7 @@ export function Hero() {
             <p className="mb-4 font-display text-xs font-semibold uppercase text-brand-text">
               Sistema de gestão empresarial
             </p>
-            <h1 className="font-display text-4xl font-bold leading-[1.13] text-brand-dark sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="font-display text-[2rem] font-bold leading-[1.18] text-brand-dark sm:text-5xl lg:text-[3.4rem]">
               A rotina da sua empresa{" "}
             <em
               className="not-italic transition-colors duration-700"
