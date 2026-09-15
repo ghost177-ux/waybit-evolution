@@ -78,8 +78,8 @@ export function Hero() {
       className={`relative min-h-[80vh] w-full overflow-hidden transition-colors duration-700 ${currentSegment.bgTint}`}
       aria-label="Apresentação"
     >
-      <div className="mx-auto grid min-h-[80vh] max-w-7xl items-center gap-12 px-6 pb-10 pt-40 lg:grid-cols-[45%_55%] lg:gap-0 lg:py-24">
-        <div className="relative z-30 min-w-0 pr-0 lg:pr-10">
+      <div className="mx-auto grid min-h-[80vh] max-w-7xl items-center gap-12 px-6 pb-10 pt-40 lg:grid-cols-[44%_56%] lg:gap-0 lg:py-24">
+        <div className="relative z-30 min-w-0 pr-0 lg:pr-12">
           <h1 className="max-w-xl font-display text-4xl font-bold leading-tight text-slate-800 sm:text-5xl lg:text-[3.45rem] lg:leading-[1.1]">
             A rotina da sua empresa <span className={currentSegment.vibrantColor}>leve</span> e com
             menos <span className={currentSegment.vibrantColor}>esforço.</span>
@@ -105,13 +105,13 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex h-[360px] min-h-[320px] w-full max-w-[560px] items-end justify-end overflow-visible pl-4 pt-6 lg:h-[min(64vh,580px)] lg:min-h-[440px] lg:pl-0">
-          <div className="absolute bottom-[5%] right-[4%] z-0 aspect-square w-[min(54%,300px)] rounded-3xl border-2 border-white/70">
+        <div className="relative mx-auto flex h-[360px] min-h-[320px] w-full max-w-[580px] items-end justify-end overflow-visible pl-4 pt-8 lg:h-[min(64vh,580px)] lg:min-h-[440px] lg:pl-8">
+          <div className="absolute bottom-[6%] right-[8%] z-0 aspect-square w-[min(58%,330px)] rounded-3xl border-2 border-white/70 shadow-[0_18px_45px_-30px_rgba(31,58,113,0.5)]">
             <div
               className={`absolute inset-0 rounded-3xl transition-colors duration-700 ${currentSegment.solidBg}`}
             />
             <div
-              className={`pointer-events-none absolute right-5 top-5 grid grid-cols-5 gap-1.5 opacity-45 ${currentSegment.vibrantColor}`}
+              className="pointer-events-none absolute right-5 top-5 grid grid-cols-5 gap-1.5 opacity-60"
               aria-hidden
             >
               {Array.from({ length: 25 }).map((_, i) => (
@@ -131,13 +131,13 @@ export function Hero() {
               {carouselSlides.map((slide, slideIndex) => (
                 <div
                   key={`${slide.id}-${slideIndex}`}
-                  className="relative flex h-full shrink-0 items-end justify-end pr-[5%]"
+                  className="relative flex h-full shrink-0 items-end justify-end pr-[7%]"
                   style={{ width: `${100 / carouselSlides.length}%` }}
                 >
                   <img
                     src={slide.imagePath}
                     alt={`${slide.name} - imagem do segmento`}
-                    className="h-[98%] max-h-full w-auto max-w-[92%] object-contain object-bottom"
+                    className="h-[96%] max-h-full w-auto max-w-[88%] object-contain object-bottom"
                   />
                 </div>
               ))}
@@ -147,9 +147,9 @@ export function Hero() {
             className={`pointer-events-none absolute inset-0 z-20 ${currentSegment.vibrantColor}`}
             aria-hidden
           >
-            <FirstDecoration className="absolute left-[12%] top-[12%] h-5 w-5" />
-            <SecondDecoration className="absolute bottom-[25%] left-[4%] h-5 w-5" />
-            <ThirdDecoration className="absolute bottom-[9%] right-[3%] h-4 w-4" />
+            <FirstDecoration className="absolute left-[16%] top-[10%] h-5 w-5" />
+            <SecondDecoration className="absolute bottom-[28%] left-[7%] h-5 w-5" />
+            <ThirdDecoration className="absolute bottom-[10%] right-[8%] h-4 w-4" />
           </div>
         </div>
       </div>
