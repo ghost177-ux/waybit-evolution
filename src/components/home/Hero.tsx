@@ -39,7 +39,7 @@ export function Hero() {
 
   return (
     <section
-      className={`relative min-h-screen w-full overflow-hidden transition-colors duration-700 ${currentSegment.bgTint}`}
+      className={`relative min-h-screen w-full overflow-hidden ${currentSegment.bgTint}`}
       aria-label="Apresentação"
     >
       <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 pb-16 pt-36 lg:grid-cols-2 lg:gap-20 lg:pt-40">
@@ -74,19 +74,19 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md">
-          <div className={`relative aspect-square w-full overflow-hidden rounded-3xl ${currentSegment.solidBg}`}>
+        <div className="relative mx-auto min-h-[520px] w-full max-w-xl">
+          <div className={`absolute bottom-8 right-0 h-[390px] w-full max-w-[420px] rounded-3xl ${currentSegment.solidBg}`}>
             <div className="pointer-events-none absolute right-12 top-12 grid grid-cols-5 gap-1.5 opacity-40">
               {Array.from({ length: 25 }).map((_, i) => (
                 <div key={i} className="h-1.5 w-1.5 rounded-sm bg-current text-slate-700" />
               ))}
             </div>
-            <img
-              src={currentSegment.imagePath}
-              alt={`${currentSegment.name} - imagem do segmento`}
-              className="w-full h-full object-cover rounded-3xl transition-opacity duration-700"
-            />
           </div>
+          <img
+            src={currentSegment.imagePath}
+            alt={`${currentSegment.name} - imagem do segmento`}
+            className="absolute bottom-0 left-1/2 z-10 h-[500px] w-auto max-w-none -translate-x-1/2 object-contain lg:right-0 lg:left-auto lg:translate-x-0"
+          />
         </div>
       </div>
     </section>

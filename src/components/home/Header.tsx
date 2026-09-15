@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Facebook, Headset, Instagram, Mail, Menu, X } from "lucide-react";
 import logoWaybit from "@/assets/logo_waybit.png.asset.json";
 import { contact, navLinks, segmentCategories } from "@/content/home";
 import { segmentIconMap, Container } from "./shared";
@@ -12,7 +12,30 @@ export function Header() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 pt-6">
-      <Container className="!mx-auto !w-[80vw] !max-w-none rounded-2xl border border-white/40 bg-white/70 px-5 shadow-sm backdrop-blur-md sm:px-7">
+      <Container className="!mx-auto !w-[80vw] !max-w-none rounded-2xl border border-white/40 bg-white/85 px-5 shadow-sm backdrop-blur-md sm:px-7">
+        <div className="flex min-h-10 items-center justify-between gap-4 border-b border-brand-dark/10 py-2 text-xs text-brand-text sm:text-sm">
+          <div className="flex items-center gap-4">
+            <a href={contact.phoneHref} className="flex items-center gap-1.5 font-medium text-brand-dark transition-colors hover:text-brand-blue">
+              <Headset className="h-4 w-4 text-brand-blue" aria-hidden />
+              <span className="hidden sm:inline">{contact.phone}</span>
+            </a>
+            <a href={`mailto:${contact.email}`} className="hidden items-center gap-1.5 transition-colors hover:text-brand-blue md:flex">
+              <Mail className="h-4 w-4 text-brand-blue" aria-hidden />
+              {contact.email}
+            </a>
+          </div>
+          <nav className="flex items-center gap-3 sm:gap-4" aria-label="Links de suporte">
+            <a href={contact.faq} target="_blank" rel="noreferrer" className="hidden transition-colors hover:text-brand-blue sm:inline">FAQ</a>
+            <a href={contact.helpCenter} target="_blank" rel="noreferrer" className="hidden transition-colors hover:text-brand-blue md:inline">Central de Ajuda</a>
+            <a href={contact.support} target="_blank" rel="noreferrer" className="hidden transition-colors hover:text-brand-blue md:inline">Suporte</a>
+            <a href={contact.facebook} target="_blank" rel="noreferrer" aria-label="Facebook da Waybit" className="transition-colors hover:text-brand-blue">
+              <Facebook className="h-4 w-4" aria-hidden />
+            </a>
+            <a href={contact.instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Waybit" className="transition-colors hover:text-brand-blue">
+              <Instagram className="h-4 w-4" aria-hidden />
+            </a>
+          </nav>
+        </div>
         <div className="flex h-20 items-center justify-between gap-6">
         <a href="/" aria-label="Waybit — página inicial" className="shrink-0 transition-transform hover:scale-[1.01]">
           <img src={logoWaybit.url} alt="Waybit" className="h-9 w-auto sm:h-10" />
