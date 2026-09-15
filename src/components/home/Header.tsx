@@ -11,8 +11,9 @@ export function Header() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-sm">
-      <Container className="flex h-20 items-center justify-between gap-6">
+    <header className="absolute inset-x-0 top-0 z-50 pt-6">
+      <Container className="!mx-auto !w-[80vw] !max-w-none rounded-2xl border border-white/40 bg-white/70 px-5 shadow-sm backdrop-blur-md sm:px-7">
+        <div className="flex h-20 items-center justify-between gap-6">
         <a href="/" aria-label="Waybit — página inicial" className="shrink-0 transition-transform hover:scale-[1.01]">
           <img src={logoWaybit.url} alt="Waybit" className="h-9 w-auto sm:h-10" />
         </a>
@@ -43,7 +44,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3">
           <a
             href={contact.whatsapp}
             target="_blank"
@@ -61,8 +62,9 @@ export function Header() {
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
+          </div>
         </div>
-      </div>
+      </Container>
 
       {/* Mobile menu */}
       <div
