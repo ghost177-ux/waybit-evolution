@@ -7,7 +7,7 @@
       "bgTint": "bg-red-50/70",
       "vibrantColor": "text-red-600",
       "solidBg": "bg-red-600",
-      "imagePath": "/src/assets/food.png",
+      "imagePath": "/assets/food.png",
       "placeholder": "Ex: Restaurante, Pizzaria, Delivery..."
     },
     {
@@ -17,7 +17,7 @@
       "bgTint": "bg-blue-50/70",
       "vibrantColor": "text-blue-600",
       "solidBg": "bg-blue-600",
-      "imagePath": "/src/assets/varejo.png",
+      "imagePath": "/assets/varejo.png",
       "placeholder": "Ex: Loja de Roupas, Mercado, Autopeças..."
     },
     {
@@ -27,7 +27,7 @@
       "bgTint": "bg-amber-50/70",
       "vibrantColor": "text-amber-500",
       "solidBg": "bg-amber-500",
-      "imagePath": "/src/assets/autoc.png",
+      "imagePath": "/assets/autoc.png",
       "placeholder": "Ex: Oficina mecânica, Troca de óleo..."
     }
   ]

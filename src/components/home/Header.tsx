@@ -1,6 +1,15 @@
 import { useState } from "react";
-import { ChevronDown, ChevronRight, Facebook, Headset, Instagram, Mail, Menu, X } from "lucide-react";
-import logoWaybit from "@/assets/logo_waybit.png.asset.json";
+import {
+  ChevronDown,
+  ChevronRight,
+  Facebook,
+  Headset,
+  Instagram,
+  Mail,
+  Menu,
+  X,
+} from "lucide-react";
+import logoWaybit from "@/assets/Logo-White.png";
 import { contact, navLinks, segmentCategories } from "@/content/home";
 import { segmentIconMap, Container } from "./shared";
 import { SystemMegaMenu } from "./SystemMegaMenu";
@@ -15,76 +24,122 @@ export function Header() {
       <Container className="!mx-auto !w-[80vw] !max-w-none rounded-2xl border border-white/40 bg-white/85 px-5 shadow-sm backdrop-blur-md sm:px-7">
         <div className="flex min-h-10 items-center justify-between gap-4 border-b border-brand-dark/10 py-2 text-xs text-brand-text sm:text-sm">
           <div className="flex items-center gap-4">
-            <a href={contact.phoneHref} className="flex items-center gap-1.5 font-medium text-brand-dark transition-colors hover:text-brand-blue">
+            <a
+              href={contact.phoneHref}
+              className="flex items-center gap-1.5 font-medium text-brand-dark transition-colors hover:text-brand-blue"
+            >
               <Headset className="h-4 w-4 text-brand-blue" aria-hidden />
               <span className="hidden sm:inline">{contact.phone}</span>
             </a>
-            <a href={`mailto:${contact.email}`} className="hidden items-center gap-1.5 transition-colors hover:text-brand-blue md:flex">
+            <a
+              href={`mailto:${contact.email}`}
+              className="hidden items-center gap-1.5 transition-colors hover:text-brand-blue md:flex"
+            >
               <Mail className="h-4 w-4 text-brand-blue" aria-hidden />
               {contact.email}
             </a>
           </div>
           <nav className="flex items-center gap-3 sm:gap-4" aria-label="Links de suporte">
-            <a href={contact.faq} target="_blank" rel="noreferrer" className="hidden transition-colors hover:text-brand-blue sm:inline">FAQ</a>
-            <a href={contact.helpCenter} target="_blank" rel="noreferrer" className="hidden transition-colors hover:text-brand-blue md:inline">Central de Ajuda</a>
-            <a href={contact.support} target="_blank" rel="noreferrer" className="hidden transition-colors hover:text-brand-blue md:inline">Suporte</a>
-            <a href={contact.facebook} target="_blank" rel="noreferrer" aria-label="Facebook da Waybit" className="transition-colors hover:text-brand-blue">
+            <a
+              href={contact.faq}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden transition-colors hover:text-brand-blue sm:inline"
+            >
+              FAQ
+            </a>
+            <a
+              href={contact.helpCenter}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden transition-colors hover:text-brand-blue md:inline"
+            >
+              Central de Ajuda
+            </a>
+            <a
+              href={contact.support}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden transition-colors hover:text-brand-blue md:inline"
+            >
+              Suporte
+            </a>
+            <a
+              href={contact.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook da Waybit"
+              className="transition-colors hover:text-brand-blue"
+            >
               <Facebook className="h-4 w-4" aria-hidden />
             </a>
-            <a href={contact.instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Waybit" className="transition-colors hover:text-brand-blue">
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Waybit"
+              className="transition-colors hover:text-brand-blue"
+            >
               <Instagram className="h-4 w-4" aria-hidden />
             </a>
           </nav>
         </div>
         <div className="flex h-20 items-center justify-between gap-6">
-        <a href="/" aria-label="Waybit — página inicial" className="shrink-0 transition-transform hover:scale-[1.01]">
-          <img src={logoWaybit.url} alt="Waybit" className="h-9 w-auto sm:h-10" />
-        </a>
+          <a
+            href="/"
+            aria-label="Waybit — página inicial"
+            className="shrink-0 transition-transform hover:scale-[1.01]"
+          >
+            <img src={logoWaybit} alt="Waybit" className="h-9 w-auto brightness-0 sm:h-10" />
+          </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
-          <div className="group">
-            <button
-              type="button"
-              className="flex items-center gap-1 font-display text-sm font-semibold text-brand-dark transition-colors group-hover:text-brand-blue"
-              aria-haspopup="true"
-            >
-              Sistema
-              <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" aria-hidden />
-            </button>
-            <SystemMegaMenu />
-          </div>
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="font-display text-sm font-semibold text-brand-dark transition-colors hover:text-brand-blue"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
+            <div className="group">
+              <button
+                type="button"
+                className="flex items-center gap-1 font-display text-sm font-semibold text-brand-dark transition-colors group-hover:text-brand-blue"
+                aria-haspopup="true"
+              >
+                Sistema
+                <ChevronDown
+                  className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                  aria-hidden
+                />
+              </button>
+              <SystemMegaMenu />
+            </div>
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="font-display text-sm font-semibold text-brand-dark transition-colors hover:text-brand-blue"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
           <div className="flex items-center gap-3">
-          <a
-            href={contact.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden rounded-xl bg-brand-green px-5 py-2.5 font-display text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:inline-block"
-          >
-            Falar com Especialista
-          </a>
-          <button
-            type="button"
-            className="rounded-md p-2 text-brand-dark lg:hidden"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            <a
+              href={contact.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden rounded-xl bg-brand-green px-5 py-2.5 font-display text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:inline-block"
+            >
+              Falar com Especialista
+            </a>
+            <button
+              type="button"
+              className="rounded-md p-2 text-brand-dark lg:hidden"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </Container>
