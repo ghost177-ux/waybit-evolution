@@ -39,10 +39,10 @@ export function Hero() {
 
   return (
     <section
-      className={`relative h-[80vh] min-h-[80vh] w-full overflow-hidden ${currentSegment.bgTint}`}
+      className={`relative min-h-[80vh] w-full overflow-hidden transition-colors duration-700 ${currentSegment.bgTint}`}
       aria-label="Apresentação"
     >
-      <div className="mx-auto grid h-full max-w-7xl items-center gap-12 px-6 pb-8 pt-36 lg:grid-cols-2 lg:gap-20 lg:pt-40">
+      <div className="mx-auto grid min-h-[80vh] max-w-7xl items-center gap-10 px-6 pb-10 pt-32 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-24">
         <div>
           <div className={`mb-4 flex items-center gap-3 ${currentSegment.vibrantColor}`}>
             <SegmentIcon className="h-7 w-7" aria-hidden />
@@ -74,8 +74,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto h-full min-h-0 w-full max-w-xl">
-          <div className={`absolute bottom-0 right-0 h-[72%] w-full max-w-[420px] rounded-3xl ${currentSegment.solidBg}`}>
+        <div className="relative mx-auto flex h-[min(62vh,560px)] min-h-[420px] w-full max-w-xl items-end justify-end overflow-visible">
+          <div
+            className={`absolute bottom-0 right-0 h-[72%] w-[88%] max-w-[420px] rounded-3xl transition-colors duration-700 ${currentSegment.solidBg}`}
+            style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 12% 100%, 0 70%)" }}
+          >
             <div className="pointer-events-none absolute right-12 top-12 grid grid-cols-5 gap-1.5 opacity-40">
               {Array.from({ length: 25 }).map((_, i) => (
                 <div key={i} className="h-1.5 w-1.5 rounded-sm bg-current text-slate-700" />
@@ -83,9 +86,10 @@ export function Hero() {
             </div>
           </div>
           <img
+            key={currentSegment.id}
             src={currentSegment.imagePath}
             alt={`${currentSegment.name} - imagem do segmento`}
-            className="absolute bottom-0 left-1/2 z-10 h-full max-h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom lg:right-0 lg:left-auto lg:translate-x-0"
+            className="absolute bottom-0 left-1/2 z-10 h-full max-h-full w-auto max-w-full -translate-x-1/2 object-contain object-bottom transition-opacity duration-700 sm:max-w-none lg:right-0 lg:left-auto lg:translate-x-0"
           />
         </div>
       </div>
