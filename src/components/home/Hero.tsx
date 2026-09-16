@@ -114,7 +114,7 @@ export function Hero() {
           </div>
 
           {/* Imagens do carrossel: maiores que o quadrado, centralizadas e alinhadas à base */}
-          <div className="absolute inset-0 z-10">
+          <div className="absolute inset-0 z-10 overflow-hidden">
             <div
               className={`flex h-full ${isTransitioning ? "transition-transform duration-700 ease-out" : "transition-none"}`}
               style={{
@@ -159,7 +159,7 @@ export function Hero() {
           >
             <FirstDecoration className="absolute left-[16%] top-[10%] h-5 w-5" />
             <SecondDecoration className="absolute bottom-[28%] left-[7%] h-5 w-5" />
-            <ThirdDecoration className="absolute right-[3%] top-[5%] h-5 w-5" />
+            <ThirdDecoration className="absolute right-[4%] top-[30%] h-5 w-5" />
           </div>
         </div>
       </div>
