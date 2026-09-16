@@ -126,7 +126,7 @@ export function Hero() {
               {carouselSlides.map((slide, slideIndex) => (
                 <div
                   key={`${slide.id}-${slideIndex}`}
-                  className="relative h-full shrink-0"
+                  className="relative h-full shrink-0 overflow-hidden"
                   style={{ width: `${100 / carouselSlides.length}%` }}
                 >
                   <div className="absolute inset-y-0 right-[8%] flex w-[min(58%,330px)] items-end justify-center">
