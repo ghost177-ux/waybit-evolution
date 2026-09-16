@@ -106,20 +106,15 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto flex h-[360px] min-h-[320px] w-full max-w-[580px] items-end justify-end overflow-visible pl-4 pt-8 lg:h-[min(64vh,580px)] lg:min-h-[440px] lg:pl-8">
-          <div className="absolute bottom-[6%] right-[8%] z-0 aspect-square w-[min(58%,330px)] rounded-3xl border-2 border-white/70 shadow-[0_18px_45px_-30px_rgba(31,58,113,0.5)]">
+          {/* Quadrado arredondado como fundo */}
+          <div className="absolute bottom-[6%] right-[8%] z-0 aspect-square w-[min(58%,330px)]">
             <div
-              className={`absolute inset-0 rounded-3xl transition-colors duration-700 ${currentSegment.solidBg}`}
+              className={`absolute inset-0 rounded-3xl border-2 border-white/70 shadow-[0_18px_45px_-30px_rgba(31,58,113,0.5)] transition-colors duration-700 ${currentSegment.solidBg}`}
             />
-            <div
-              className="pointer-events-none absolute right-5 top-5 grid grid-cols-5 gap-1.5 opacity-60"
-              aria-hidden
-            >
-              {Array.from({ length: 25 }).map((_, i) => (
-                <div key={i} className="h-1.5 w-1.5 rounded-sm bg-white/70" />
-              ))}
-            </div>
           </div>
-          <div className="absolute inset-x-0 bottom-0 z-10 h-[calc(100%-1.5rem)] overflow-hidden">
+
+          {/* Imagens do carrossel: maiores que o quadrado, centralizadas e alinhadas à base */}
+          <div className="absolute inset-0 z-10 overflow-hidden">
             <div
               className={`flex h-full ${isTransitioning ? "transition-transform duration-700 ease-out" : "transition-none"}`}
               style={{
@@ -131,25 +126,40 @@ export function Hero() {
               {carouselSlides.map((slide, slideIndex) => (
                 <div
                   key={`${slide.id}-${slideIndex}`}
-                  className="relative flex h-full shrink-0 items-end justify-end pr-[7%]"
+                  className="relative h-full shrink-0"
                   style={{ width: `${100 / carouselSlides.length}%` }}
                 >
-                  <img
-                    src={slide.imagePath}
-                    alt={`${slide.name} - imagem do segmento`}
-                    className="h-[96%] max-h-full w-auto max-w-[88%] object-contain object-bottom"
-                  />
+                  <div className="absolute bottom-[6%] right-[8%] aspect-square w-[min(58%,330px)]">
+                    <img
+                      src={slide.imagePath}
+                      alt={`${slide.name} - imagem do segmento`}
+                      className="absolute bottom-0 left-1/2 h-[114%] w-auto max-w-none -translate-x-1/2 object-contain"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Pontilhado fora do quadrado, flutuando acima dele */}
+          <div
+            className={`pointer-events-none absolute bottom-[6%] right-[8%] z-30 aspect-square w-[min(58%,330px)] ${currentSegment.vibrantColor}`}
+            aria-hidden
+          >
+            <div className="absolute -top-14 right-4 grid grid-cols-5 gap-1.5 opacity-70">
+              {Array.from({ length: 25 }).map((_, i) => (
+                <div key={i} className="h-1.5 w-1.5 rounded-sm bg-current" />
+              ))}
+            </div>
+          </div>
+
           <div
             className={`pointer-events-none absolute inset-0 z-20 ${currentSegment.vibrantColor}`}
             aria-hidden
           >
             <FirstDecoration className="absolute left-[16%] top-[10%] h-5 w-5" />
             <SecondDecoration className="absolute bottom-[28%] left-[7%] h-5 w-5" />
-            <ThirdDecoration className="absolute bottom-[10%] right-[8%] h-4 w-4" />
+            <ThirdDecoration className="absolute right-[4%] top-[30%] h-5 w-5" />
           </div>
         </div>
       </div>
