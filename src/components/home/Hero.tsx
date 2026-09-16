@@ -126,14 +126,14 @@ export function Hero() {
               {carouselSlides.map((slide, slideIndex) => (
                 <div
                   key={`${slide.id}-${slideIndex}`}
-                  className="relative h-full shrink-0"
+                  className="relative h-full shrink-0 overflow-hidden"
                   style={{ width: `${100 / carouselSlides.length}%` }}
                 >
-                  <div className="absolute bottom-[6%] right-[8%] aspect-square w-[min(58%,330px)]">
+                  <div className="absolute inset-y-0 right-[8%] flex w-[min(58%,330px)] items-end justify-center">
                     <img
                       src={slide.imagePath}
                       alt={`${slide.name} - imagem do segmento`}
-                      className="absolute bottom-0 left-1/2 h-[114%] w-auto max-w-none -translate-x-1/2 object-contain"
+                      className="h-full w-auto max-w-none object-contain"
                     />
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export function Hero() {
             className={`pointer-events-none absolute bottom-[6%] right-[8%] z-30 aspect-square w-[min(58%,330px)] ${currentSegment.vibrantColor}`}
             aria-hidden
           >
-            <div className="absolute -top-14 right-4 grid grid-cols-5 gap-1.5 opacity-70">
+            <div className="absolute bottom-[calc(100%+32px)] right-4 grid grid-cols-5 gap-1.5 opacity-70">
               {Array.from({ length: 25 }).map((_, i) => (
                 <div key={i} className="h-1.5 w-1.5 rounded-sm bg-current" />
               ))}
